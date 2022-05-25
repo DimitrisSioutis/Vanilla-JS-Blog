@@ -1,0 +1,26 @@
+
+<main>
+    <style>
+        .form-group {
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            margin: 10px;
+
+        }
+
+        .cancel {
+            text-decoration: none;
+        }
+    </style>
+    <form action='/articles' class="form" method="POST">
+        <%- include('form_fields') %>
+    </form>
+</main>

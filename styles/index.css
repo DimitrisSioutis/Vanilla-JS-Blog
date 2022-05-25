@@ -1,0 +1,53 @@
+@font-face {
+    font-family: 'Zona Pro Thin';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Zona Pro Thin'), url('/extras/ZonaPro-Thin.woff') format('woff');
+}
+
+.main-body {
+    display: flex;
+    box-shadow: 0 0.4rem 1.2rem 0 rgb(0 0 0 / 40%);
+}
+
+.column {
+    height: 500px;
+    width: 25%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 1px -125px 115px 25px rgba(26, 36, 52, 1) inset;
+    -webkit-box-shadow: 1px -125px 115px 25px rgba(26, 36, 52, 1) inset;
+    -moz-box-shadow: 1px -125px 115px 25px rgba(26, 36, 52, 1) inset;
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.title {
+    height: 20px;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 430px;
+    font-size: 16px;
+}
+
+#markdown1,
+#markdown2,
+#markdown3 {
+    height: 20px;
+    text-align: center;
+    margin-top: 20px;
+    display: none;
+    font-size: 10px;
+    color: white;
+}
+
+#column2 {
+    width: 50%;
+}
+
+
+

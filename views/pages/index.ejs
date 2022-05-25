@@ -1,0 +1,50 @@
+<link href="/styles/index.css" type="text/css" rel="stylesheet" />
+<link href="/styles/articles.css" type="text/css" rel="stylesheet" />
+<link rel="shortcut icon" href="/extras/logo.ico">
+<main>
+    <div class="main-body">
+        <div class="column" id="column1" style="background-image: url('<%- articles[0].image %>');"
+            onclick="window.location='http://localhost:8000/articles/<%= articles[0].slug %>';">
+            <p class="title" id="title1"> <%- articles[0].title %> </p>
+            <p class="markdown" id="markdown1"><%- articles[0].markdown %></p>
+        </div>
+        <div class="column" id="column2" style="background-image: url('<%- articles[1].image %>');"
+            onclick="window.location='http://localhost:8000/articles/<%= articles[1].slug %>';">
+            <p class="title" id="title2"> <%- articles[1].title %> </p>
+            <p class="markdown" id="markdown2"><%- articles[1].markdown %></p>
+        </div>
+        <div class="column" id="column3" style="background-image: url('<%- articles[2].image %>');"
+            onclick="window.location='http://localhost:8000/articles/<%= articles[2].slug %>';">
+            <p class="title" id="title3"> <%- articles[2].title %> </p>
+            <p class="markdown" id="markdown3"><%- articles[2].markdown %></p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="articles">
+            <% articles.forEach(article => { %>
+            <div id="article-body">
+                <div class="article-image-container">
+                    <img src=" <%= article.image %> "
+                        onclick="window.location='http://localhost:8000/articles/<%= article.slug %>';" />
+                </div>
+                <div class="article-container">
+                    <h4 class="article-title"><%= article.title %></h4>
+                    <div class="date"><%= article.createdAt.toLocaleDateString() %></div>
+                    <div class="markdown"><%= article.markdown %></div>
+                    <div class="read-more" id="read-more">
+                        <a class="read-more" id="a" href="articles/<%= article.slug %>">Read More<i
+                                class='fas fa-arrow-right' id="i"></i></a>
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+        <div id="right-side">
+        </div>
+    </div>
+
+</main>
+
+
+<script src="/scripts/index.js"></script>

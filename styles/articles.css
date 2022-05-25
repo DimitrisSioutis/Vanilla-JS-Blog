@@ -1,0 +1,136 @@
+@font-face {
+    font-family: 'Zona Pro Thin';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Zona Pro Thin'), url('/extras/ZonaPro-Thin.woff') format('woff');
+}
+
+h1{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding-top:10px;
+    padding-bottom:30px;
+    color: white;
+}
+
+.container{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    background: -moz-linear-gradient(top, #1a2434 10%, #931d37 40%, #d14f51 75%,#d14f51 99%);
+    background: -webkit-linear-gradient(top, #1a2434 10%, #931d37 40%, #d14f51 75%, #d14f51 99%);
+    background: linear-gradient(to bottom, #1a2434 10%, #931d37 40%, #d14f51 75%,#d14f51 99%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1a2434', endColorstr='#ff6668', GradientType=0);
+}
+
+#right-side {
+    height: 1500px;
+    background-color: purple;
+    width: 400px;
+}
+
+#article-body {
+    display: flex;
+    padding: 10px 10px 0px 10px;
+    background-color: white;
+}
+
+.article-image-container {
+    width: 400px;
+    height: 300px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.article-image-container img {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    transition: transform .5s ease;
+}
+
+.article-image-container:hover img {
+    width: 400px;
+    height: 300px;
+    transform: scale(1.2);
+}
+
+.article-container {
+    margin: 10px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;  
+}
+
+.article-title {
+    font-size: 18px;
+}
+
+.date {
+    font-family: 'Zona Pro Thin';
+    color: rgb(120, 120, 120);
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.markdown {
+    font-family: 'Zona Pro Thin';
+    color: rgb(40, 40, 40);
+    font-size: 14px;
+    font-weight: bolder;
+    letter-spacing: 0.1em;
+}
+
+.read-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 132px;
+    height: 42px;
+}
+
+.read-more a {
+    color: white;
+    background-color: black;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    padding-left: 20px;
+    padding-top: 12px;
+}
+
+.read-more a::after {
+    content: "";
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: rgb(0, 0, 0);
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.read-more a:hover {
+    color: black;
+    padding-left: 10px;
+    background-color: white;
+    transition: 0.6s ease;
+}
+
+#a:hover #i {
+    padding-left: 10px;
+}
+
+.read-more a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.read-more i {
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+}
