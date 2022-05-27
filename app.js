@@ -10,8 +10,8 @@ const articleRouter = require('./routes/articles')
 const mainRouter = require('./routes/main')
 
 const mongoose = require('mongoose');
-const Article = require('./models/database')
-const Users = require('./models/users')
+const Article = require('./models/articles_db')
+const Users = require('./models/admins_db')
 
 const methodOverride = require('method-override')
 const passport = require("passport");

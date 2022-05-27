@@ -1,5 +1,5 @@
 const express = require('express');
-const Article = require("./../models/database");
+const Article = require("../models/articles_db");
 const router = express.Router();
 
 router.get('/new', (req, res) => {
@@ -19,7 +19,7 @@ router.get('/:slug', async (req, res) => {
     const article = await Article.findOne({
         slug: req.params.slug
     })
-    if (article == null) res.redirect('/news')
+    if (article == null) res.redirect('/news')  //if the slug doesnt exist ,user is redirected to the news page
     res.render('articles/show', {
         article: article
     })

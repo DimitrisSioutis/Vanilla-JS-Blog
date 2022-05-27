@@ -1,9 +1,9 @@
 const express = require('express');
-const Article = require("./../models/database");
+const Article = require("../models/articles_db");
 const main = express.Router();
 
 main.get("/", async(req, res) => {
-    const articles =  await Article.find().sort({ createdAt: 'desc' }) //method to load all articles
+    const articles =  await Article.find().sort({ createdAt: 'desc' }) //method to load all articles , desc : descending order , loads the newest articles 1st
     res.render('pages/index', {articles: articles });
 });
 
