@@ -34,8 +34,8 @@ mongoose.connect(process.env.DATABASE_URL,{
 } )
 
 app.set("view engine", "ejs");
-app.use(express.urlencoded({extended: false}))
 app.set('layout','layout')
+app.use(express.urlencoded({extended: false}))  //gives access to body of the request (req.body)
 app.use(expressLayouts)
 app.use(express.json())
 app.use(express.static(__dirname));

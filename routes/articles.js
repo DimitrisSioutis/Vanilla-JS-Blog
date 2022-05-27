@@ -49,10 +49,10 @@ function saveArticleAndRedirect(path) {
         article.image= req.body.image
         try {
             article = await article.save()
-            res.redirect(`/articles/${article.slug}`)
+            res.redirect(`/articles/${article.slug}`)  //once article is saved the user gets redirected to the new article
         } catch (e) {
             res.render(`articles/${path}`, {
-                article: article
+                article: article                       
             } )
         }
     }

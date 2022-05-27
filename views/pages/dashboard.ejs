@@ -1,6 +1,5 @@
 <main>
   <link href="/styles/dashboard.css" type="text/css" rel="stylesheet" />
-  <link href="/styles/animation.css" type="text/css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <div class="first-row">
     <p class="title">
@@ -32,7 +31,7 @@
           <div class="opt">
             <a href="/articles/edit/<%= article.id %>" class="button">Edit</a>
             <form action="/articles/<%= article.id %>?_method=DELETE" method="POST">
-              <button type="submit" class="delete"><span class='text'>Delete</button>
+              <button type="submit" class="delete" style="color: red;"><span class='text'>Delete</button>
             </form>
           </div>
         </div>
