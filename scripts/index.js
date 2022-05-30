@@ -37,10 +37,10 @@ banners.forEach(i => i.image.addEventListener("mouseout", () => {
 
 function onMouserOver(image, title, markdown) {
     image.style.width = "50%"
-    image.style.transition = '0.4s ease';
+    image.style.transition = '0.4s';
     title.style.fontSize = "30px";
     title.style.marginTop = "400px";
-    title.style.transition = '0.6s ease';
+    title.style.transition = '0.6s ';
     markdown.style.fontSize = "10px";
     markdown.style.display = "block";
 }

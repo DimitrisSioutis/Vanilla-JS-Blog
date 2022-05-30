@@ -2,11 +2,11 @@
 <link href="/styles/articles.css" type="text/css" rel="stylesheet" />
 <link rel="shortcut icon" href="/extras/logo.ico">
 <main>
-    <div class="main-body">
+    <div class="carousel">
         <div class="column" id="column1" style="background-image: url('<%- articles[0].image %>');"
             onclick="window.location='http://localhost:8000/articles/<%= articles[0].slug %>';">
             <p class="title" id="title1"> <%- articles[0].title %> </p>
-            <p class="markdown" id="markdown1"><%- articles[0].markdown %></p>
+            <p class="markdown" id="markdown1"> <%- articles[0].markdown %> </p>
         </div>
         <div class="column" id="column2" style="background-image: url('<%- articles[1].image %>');"
             onclick="window.location='http://localhost:8000/articles/<%= articles[1].slug %>';">

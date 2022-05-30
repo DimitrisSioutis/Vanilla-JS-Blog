@@ -5,7 +5,7 @@
     src: local('Zona Pro Thin'), url('/extras/ZonaPro-Thin.woff') format('woff');
 }
 
-.main-body {
+.carousel{
     display: flex;
     box-shadow: 0 0.4rem 1.2rem 0 rgb(0 0 0 / 40%);
 }
@@ -34,15 +34,13 @@
     font-size: 16px;
 }
 
-#markdown1,
-#markdown2,
-#markdown3 {
+#markdown1,#markdown2,#markdown3 {
     height: 20px;
     text-align: center;
     margin-top: 20px;
-    display: none;
     font-size: 10px;
     color: white;
+    display: none;
 }
 
 #column2 {

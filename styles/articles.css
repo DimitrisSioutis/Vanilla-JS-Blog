@@ -19,10 +19,6 @@ h1{
     align-content: center;
     justify-content: center;
     width: 100%;
-    background: -moz-linear-gradient(top, #1a2434 10%, #931d37 40%, #d14f51 75%,#d14f51 99%);
-    background: -webkit-linear-gradient(top, #1a2434 10%, #931d37 40%, #d14f51 75%, #d14f51 99%);
-    background: linear-gradient(to bottom, #1a2434 10%, #931d37 40%, #d14f51 75%,#d14f51 99%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1a2434', endColorstr='#ff6668', GradientType=0);
 }
 
 #right-side {

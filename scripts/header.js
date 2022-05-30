@@ -1,6 +1,4 @@
-const createDomPurify = require('dompurify')
-const {JSDOM} = require('jsdom')
-const dompurify = createDomPurify(new JSDOM().window)
+
 
 /* Sticky Header on scroll down */
 window.addEventListener("scroll", () => {
@@ -17,10 +15,11 @@ window.addEventListener("scroll", () => {
 
 
 /* Search button */
-const input = dompurify(document.getElementById("input"))       //using dompurify to prevent any malicious code from the user
+const input = document.getElementById("input") 
+let sanitizedInput = DOMPurify.sanitize(input); 
 const searchResults = document.getElementById("results")
 
-input.onkeyup = (e)=>{
+sanitizedInput.onkeyup = (e)=>{
     fetch('getArticles', {method: 'POST',headers: {'Content-Type': 'application/json'},body: JSON.stringify({payload: e.target.value})})
     .then(res => res.json()).then(data => {
         let payload = data.payload;

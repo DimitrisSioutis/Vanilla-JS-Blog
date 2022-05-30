@@ -9,6 +9,7 @@ const expressLayouts = require("express-ejs-layouts")
 
 const articleRouter = require('./routes/articles')
 const mainRouter = require('./routes/main')
+
 const mongoose = require('mongoose');
 const Article = require('./models/articles_db')
 const Users = require('./models/admins_db')
@@ -58,8 +59,8 @@ app.use('/',mainRouter);
 app.use('/articles', articleRouter); //method to use router from articles.js
 app.use(errorHandler); //we use a middleware to catch any error without cancelling our application
 
-app.listen( process.env.PORT || port, () => {
-    console.log(`server running on port: ${port}`);
+app.listen( process.env.PORT, () => {
+    console.log(`server running on port: ${process.env.PORT}`);
 })
 
 app.get("/dashboard",checkAuthenticated, async(req, res) => {
