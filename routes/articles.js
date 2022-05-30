@@ -16,7 +16,7 @@ router.get('/edit/:id', async (req, res) => {
 })
 
 router.get('/:slug', async (req, res) => {
-    const article = await Article.findOne({
+    const article = await Article.findOne({    //we use findOne instead of find cause we need one particular article
         slug: req.params.slug
     })
     if (article == null) res.redirect('/news')  //if the slug doesnt exist ,user is redirected to the news page
@@ -42,7 +42,7 @@ router.delete('/:id', async (req, res) => {
 
 function saveArticleAndRedirect(path) {
     return async (req, res) => {
-        let article = req.article
+        let article = req.article           //instead of creating a new article ,we are using the article of the request in case we want to edit instead of creating a new article 
         article.title = req.body.title
         article.description = req.body.description
         article.markdown = req.body.markdown

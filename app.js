@@ -6,14 +6,14 @@ const express = require("express");
 const app = express();
 const port = 8000;
 const expressLayouts = require("express-ejs-layouts")
+
 const articleRouter = require('./routes/articles')
 const mainRouter = require('./routes/main')
-
 const mongoose = require('mongoose');
 const Article = require('./models/articles_db')
 const Users = require('./models/admins_db')
+const methodOverride = require('method-override')  //enables us to use .delete
 
-const methodOverride = require('method-override')
 const passport = require("passport");
 const flash = require('express-flash')
 const session = require('express-session')
@@ -33,6 +33,12 @@ mongoose.connect(process.env.DATABASE_URL,{
     useCreateIndex: true
 } )
 
+function errorHandler(err,req,res,next){
+    if(err){
+        res.send('<h1> Error <h1>')
+    }
+}
+
 app.set("view engine", "ejs");
 app.set('layout','layout')
 app.use(express.urlencoded({extended: false}))  //gives access to body of the request (req.body)
@@ -48,9 +54,9 @@ app.use(session({
 }))
 app.use(passport.initialize())
 app.use(passport.session())
-
 app.use('/',mainRouter); 
 app.use('/articles', articleRouter); //method to use router from articles.js
+app.use(errorHandler); //we use a middleware to catch any error without cancelling our application
 
 app.listen( process.env.PORT || port, () => {
     console.log(`server running on port: ${port}`);

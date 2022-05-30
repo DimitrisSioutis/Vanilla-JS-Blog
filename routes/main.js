@@ -18,7 +18,7 @@ main.post("/search", async(req,res) => {
 })
 
 main.get("/news", async(req, res) => {
-    const articles =  await Article.find().sort({ createdAt: 'desc' }) //method to load all articles
+    const articles =  await Article.find().sort({ createdAt: 'desc' }) 
     res.render('articles/news', {
         articles: articles
     });

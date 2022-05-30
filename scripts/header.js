@@ -1,3 +1,7 @@
+const createDomPurify = require('dompurify')
+const {JSDOM} = require('jsdom')
+const dompurify = createDomPurify(new JSDOM().window)
+
 /* Sticky Header on scroll down */
 window.addEventListener("scroll", () => {
     var header = document.querySelector("header");
@@ -13,24 +17,20 @@ window.addEventListener("scroll", () => {
 
 
 /* Search button */
-const input = document.getElementById("input")
-const searchResults = document.getElementById("autocom-box")
+const input = dompurify(document.getElementById("input"))       //using dompurify to prevent any malicious code from the user
+const searchResults = document.getElementById("results")
 
 input.onkeyup = (e)=>{
-    fetch('getArticles', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({payload: e.target.value})
-    }).then(res => res.json()).then(data => {
+    fetch('getArticles', {method: 'POST',headers: {'Content-Type': 'application/json'},body: JSON.stringify({payload: e.target.value})})
+    .then(res => res.json()).then(data => {
         let payload = data.payload;
-        searchResults.innerHTML = ``;
+        searchResults.innerText = ``;         
         if (payload.length < 1) {
-            searchResults.innerHTML = ``;
-            return;
-        }
+            searchResults.innerText = ``;
+            return;}
         payload.forEach((item, index) => {
-            if (index > 0) searchResults.innerHTML += `<hr>`;
-            searchResults.innerHTML += `<li><a href="articles/${item.slug}">${item.title}</a></li>`
+            if (index > 0) searchResults.innerText += `<hr>`;
+            searchResults.innerText += `<li><a href="articles/${item.slug}">${item.title}</a></li>`
         });
     });
 }
