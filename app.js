@@ -1,32 +1,16 @@
-if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').config()
-}
-
+if (process.env.NODE_ENV !== 'production') {require('dotenv').config()}
 const express = require("express");
-const app = express();
-const port = 8000;
 const expressLayouts = require("express-ejs-layouts")
-
 const articleRouter = require('./routes/articles')
 const mainRouter = require('./routes/main')
-
 const mongoose = require('mongoose');
 const Article = require('./models/articles_db')
 const Users = require('./models/admins_db')
 const methodOverride = require('method-override')  //enables us to use .delete
-
 const passport = require("passport");
 const flash = require('express-flash')
 const session = require('express-session')
 const initializePassport = require('./passport-config');
-
-initializePassport(
-    passport,
-    username => users.find(user => user.username === username),
-    id => users.find(user => user.id === id)
-)
-
-const users = []
 
 mongoose.connect(process.env.DATABASE_URL,{
     useNewUrlParser: true,
@@ -40,6 +24,8 @@ function errorHandler(err,req,res,next){
     }
 }
 
+const app = express();
+
 app.set("view engine", "ejs");
 app.set('layout','layout')
 app.use(express.urlencoded({extended: false}))  //gives access to body of the request (req.body)
@@ -47,7 +33,7 @@ app.use(expressLayouts)
 app.use(express.json())
 app.use(express.static(__dirname));
 app.use(methodOverride('_method'))  //method to use DELETE
-app.use(flash())
+app.use(flash())  //used to send messages regarding his attempt to login
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
@@ -63,9 +49,23 @@ app.listen( process.env.PORT, () => {
     console.log(`server running on port: ${process.env.PORT}`);
 })
 
+/****           PASSPORT            *****/
+/****                               *****/
+/****                               *****/
+/****           PASSPORT            *****/
+
+
+const users = []
+
+initializePassport(
+    passport,
+    username => users.find(user => user.username === username),
+    id => users.find(user => user.id === id)
+)
+
 app.get("/dashboard",checkAuthenticated, async(req, res) => {
     const articles =  await Article.find().sort({ createdAt: 'desc' }) //method to load all articles
-    res.render('pages/dashboard', {articles: articles , name: req.user.username});
+    res.render('pages/dashboard', {articles: articles , name: req.user.username});  //because of session req.user is always the user that has logged in
 });
 
 app.get('/login',checkNotAuthenticated, async(req, res)=>{
@@ -81,7 +81,7 @@ app.post("/login",checkNotAuthenticated, passport.authenticate
 );
 
 function checkAuthenticated(req, res, next) {
-    if (req.isAuthenticated()) {
+    if (req.isAuthenticated()) { // isAuthenticated is function used by passport to see a user is alreay authenticated/logged in
       return next()
     }
     res.redirect('/login')
