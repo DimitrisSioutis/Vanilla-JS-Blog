@@ -1,0 +1,29 @@
+<link href="/styles/article-fields.css" type="text/css" rel="stylesheet" />
+<div class="fields-container">
+    <div class="fields">
+        <div class="field">
+            <label for="title">Title :</label>
+            <input required value=" <%= article.title %> " type="text" name="title" id="title">
+        </div>
+        <div class="field">
+            <label for="description">Description :</label>
+            <textarea name="description" id="description"><%= article.description %></textarea>
+        </div>
+        <div class="field">
+            <label for="markdown">Markdown : </label>
+            <textarea required name="markdown" id="markdown"><%= article.markdown %></textarea>
+        </div>
+        <div class="field">
+            <label for="image">Image URL : </label>
+            <input value="<%= article.image %>" type="text" name="image" id="image">
+        </div>
+        <div class="options">
+            <div class="cancel">
+                <a href="/news">Cancel</a>
+            </div>
+            <div class="save">
+                <button type="submit">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

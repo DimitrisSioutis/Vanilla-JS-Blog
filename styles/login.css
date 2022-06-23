@@ -1,0 +1,70 @@
+@font-face {
+    font-family: 'Zona Pro Thin';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Zona Pro Thin'), url('/extras/ZonaPro-Thin.woff') format('woff');
+}
+
+.login-container{
+    position: relative;
+    left:37%;
+    width: 26%;
+    height: 84.5vh;
+    top: 10vh;
+}
+
+.login-form{
+    background-color: white;
+    border-radius: 5px;
+    height: 40vh;
+}
+
+.login-form h1{
+    width:100%;
+    height: 25%;
+    color: #1A2434;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form .fields{
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form .username, .password{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1A2434;
+    width: 100%;
+    height: 6vh;
+    font-size: 2vh;
+}
+
+.login-form #username,#password{
+    margin-left: 1vw;
+    font-size: 2vh;
+    font-family: 'Zona Pro Thin';
+    color: #1a2434dc
+}
+
+.login-form .submit{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5vh;
+}
+
+.login-form #login{
+    color:white;
+    font-size: 2vh;
+    height: 5vh;
+    background-color: #d14f51;
+}
+
+.login-form #login:hover{
+    cursor: pointer;
+}

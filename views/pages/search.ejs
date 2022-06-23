@@ -1,30 +1,9 @@
 <main>
     <link href="/styles/articles.css" type="text/css" rel="stylesheet" />
     <h1>Αποτελέσματα Αναζήτησης</h1>
-    <div class="container">
         <% if (articles[0].title === "Oops,nothing Found"){ %>
         <%= articles[0].title %>
         <% }else{%>
-        <div class="articles">
-            <% articles.forEach(article => { %>
-            <div id="article-body">
-                <div class="article-image-container">
-                    <img src=" <%= article.image %> "
-                        onclick="window.location='http://localhost:8000/articles/<%= article.slug %>';" />
-                </div>
-                <div class="article-container">
-                    <h4 class="article-title"><%= article.title %></h4>
-                    <div class="date"><%= article.createdAt.toLocaleDateString() %></div>
-                    <div class="markdown"><%= article.markdown %></div>
-                    <div class="read-more" id="read-more">
-                        <a class="read-more" id="a" href="articles/<%= article.slug %>">Read More<i
-                                class='fas fa-arrow-right' id="i"></i></a>
-                    </div>
-                </div>
-            </div>
-            <% }) %>
-        </div>
+            <%- include('../articles/all-articles.ejs') %>
         <% } %>
-    </div>
-    </div>
 </main>

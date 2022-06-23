@@ -1,0 +1,74 @@
+
+    .player-container {
+        background-color: white;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+        display: flex;
+        border: 1px solid #931d37;
+    }
+
+    .flex-labels {
+        flex: 0.85;
+
+    }
+
+    .flex-inputs {
+        flex: 1.15;
+    }
+
+    .label {
+        text-align: right;
+        width: 100%;
+        padding-right: 20px;        
+        font-size: 14px;
+        line-height: 50px;
+        display: inline-block;
+        vertical-align: middle;
+        color: #1a2434;
+    }
+
+    .input {
+        width: 100%;
+        padding: 4px;
+    }
+
+    .input input{
+        font-size: 13px;
+        padding: 20px;
+        width: 50%;
+        background-color: white;
+        border-radius: 5px;
+        border: 1px solid #931d37;
+        color: rgb(75, 75, 75);
+    }
+
+    .options{
+        padding-top: 20px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .options a{
+        display: inline-block;
+        padding: 10px;
+        height: 40px;
+        width: 100px;
+        justify-content: center;
+        text-align: center;
+        background-color: rgba(255, 49, 49, 0.76);
+        border: 1px solid #ffffff;
+        text-decoration: none;
+        margin-right: 20px;
+        color: white;
+    }
+
+    .options button{
+        background-color: rgb(70, 192, 66);
+        height: 40px;
+        width: 100px;
+        justify-content: center;
+        text-align: center;
+        border: 1px solid #ffffff;
+    }

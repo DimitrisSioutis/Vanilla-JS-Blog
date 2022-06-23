@@ -1,16 +1,23 @@
-
+<link href="/styles/login.css" type="text/css" rel="stylesheet" />
 <main>
-    <% if (messages.error) { %>
-        <%= messages.error%>
-    <% } %>
-    <form action="/login" method="POST">
-        <input type="text" id="username" name="username" placeholder="Username">
-        <input type="text" id="password" name= "password" placeholder="Password">
-        <input type="text" id="id" name= "id" placeholder="id">
-        <input type="submit" id="login"  value="Log In">
-    </form>
-    
-    <script>
-    </script>
+
+    <div class="login-container">
+        <form action="/login" class="login-form" method="POST">
+            <h1>Είσοδος</h1>
+            <div class="fields">
+                <div class="username">
+                    <label for="username">Username :</label>
+                    <input type="text" id="username" name="username" placeholder="Username">
+                </div>
+                <div class="password">
+                    <label for="password">Password :</label>
+                    <input type="password" id="password" name= "password" placeholder="Password">
+                </div>
+                <div class="submit">
+                    <input type="submit" id="login"  value="Log In">
+                </div>   
+            </div>
+        </form>
+    </div>
 </main>
 

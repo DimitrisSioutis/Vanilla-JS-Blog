@@ -2,7 +2,7 @@
     font-family: 'Zona Pro Thin';
     font-style: normal;
     font-weight: normal;
-    src: local('Zona Pro Thin'), url('/extras/ZonaPro-Thin.woff') format('woff');
+    src: local('Zona Pro Thin'), url('/public/ZonaPro-Thin.woff') format('woff');
 }
 
 .carousel{
@@ -18,34 +18,50 @@
     -o-background-size: cover;
     background-size: cover;
     background-position: center;
-    box-shadow: 1px -125px 115px 25px rgba(26, 36, 52, 1) inset;
-    -webkit-box-shadow: 1px -125px 115px 25px rgba(26, 36, 52, 1) inset;
-    -moz-box-shadow: 1px -125px 115px 25px rgba(26, 36, 52, 1) inset;
-    flex-grow: 1;
+    -webkit-box-shadow: inset 0px -70px 30px -5px #1A2434; 
+    box-shadow: inset 0px -70px 30px -5px #1A2434;
     cursor: pointer;
+    text-align: center;
 }
 
-.title {
+
+.column .title {
     height: 20px;
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: 16px;
-    text-align: center;
-    margin-top: 430px;
+    margin-top: 420px;
     font-size: 16px;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
 }
 
-#markdown1,#markdown2,#markdown3 {
-    height: 20px;
+.column .description{
     text-align: center;
-    margin-top: 20px;
     font-size: 10px;
-    color: white;
-    display: none;
+    color: rgb(255, 255, 255);
+    visibility: hidden;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
 }
 
-#column2 {
+#column1{
+    flex-grow: 1;
+}
+.column:hover {
     width: 50%;
+    transition: 0.3s ease;
 }
 
+.column:not( :hover ){
+    width: 25%;
+    transition: 0.3s ease;
+}
 
+.column:hover .title {
+    font-size: 30px;
+    margin-top: 360px;
+    transition: 0.3s ease;
+}
 
+.column:hover .description{
+    margin-top: 20px;
+    visibility: visible;
+}

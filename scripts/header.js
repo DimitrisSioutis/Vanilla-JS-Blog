@@ -1,5 +1,4 @@
 
-
 /* Sticky Header on scroll down */
 window.addEventListener("scroll", () => {
     var header = document.querySelector("header");
@@ -9,30 +8,32 @@ window.addEventListener("scroll", () => {
         main.style.top = "0px";
     }
     if(window.scrollY==0){
-        main.style.top = "145px";
+        main.style.top = "15vh";
     }
 })
 
 
 /* Search button */
-const input = document.getElementById("input") 
-let sanitizedInput = DOMPurify.sanitize(input); 
-const searchResults = document.getElementById("results")
+const searchInput = document.getElementById("input")  
+const searchResults = document.getElementById("autocom-box")
 
-sanitizedInput.onkeyup = (e)=>{
-    fetch('getArticles', {method: 'POST',headers: {'Content-Type': 'application/json'},body: JSON.stringify({payload: e.target.value})})
+searchInput.addEventListener('input',e =>{
+    fetch('getArticles', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({input: e.target.value})})
     .then(res => res.json()).then(data => {
-        let payload = data.payload;
-        searchResults.innerText = ``;         
-        if (payload.length < 1) {
-            searchResults.innerText = ``;
+        let input = data.input;
+        searchResults.innerHTML = ``;         
+        if (input.length < 1) {
+            searchResults.innerHTML = ``;
             return;}
-        payload.forEach((item, index) => {
-            if (index > 0) searchResults.innerText += `<hr>`;
-            searchResults.innerText += `<li><a href="articles/${item.slug}">${item.title}</a></li>`
+        input.forEach((item, index) => {
+            if (index > 0) searchResults.innerHTML += `<hr>`;
+            searchResults.innerHTML += `<li><a class="autocom-title" href="articles/${item.slug}">${item.title}</a><a class ="autocom-image" href="articles/${item.slug}"><img src="${item.image} " /></a></li>`
         });
     });
-}
+})
 
 /* Social media pop ups on hover */
 const socials = [];

@@ -1,0 +1,43 @@
+<link href="/styles/roster.css" type="text/css" rel="stylesheet" />
+<main>
+    <h4 class="page-title">Πρώτη Ομάδα</h4>
+    <div class="outside-container">
+        <div class="player-container">
+            <h3>Τερματοφύλακες</h3>
+            <div class="players goalkeepers">
+                <% players.forEach(player => { %>
+                <%if(player.position === 'Goalkeeper'){ %>
+                <%- include('player-card.ejs',{player:player}) %> <!-- passing the player object to the play-card -->
+                <% } %>
+                <% }) %>
+            </div>
+            <h3>Αμυντικοί</h3>
+            <div class="players defenders">
+                <% players.forEach(player => { %>
+                <%if(player.position === 'Defender'){ %>
+                <%- include('player-card.ejs',{player:player}) %> <!-- passing the player object to the play-card -->
+                <% } %>
+                <% }) %>
+            </div>
+            <h3>Μέσοι</h3>
+            <div class="players midfielders">
+                <% players.forEach(player => { %>
+                <%if(player.position === 'Midfielder'){ %>
+                <%- include('player-card.ejs',{player:player}) %> <!-- passing the player object to the play-card -->
+                <% } %>
+                <% }) %>
+            </div>
+            <h3>Επιθετικοί</h3>
+            <div class="players forwards">
+                <% players.forEach(player => { %>
+                <%if(player.position === 'Forward'){ %>
+                <%- include('player-card.ejs',{player:player}) %> <!-- passing the player object to the play-card -->
+                <% } %>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+    </div>
+</main>
+
+<script src="/scripts/roster.js"></script>

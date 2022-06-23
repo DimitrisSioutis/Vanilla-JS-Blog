@@ -1,0 +1,8 @@
+
+<main>
+  <h1 id="edit">Επεξεργασία άρθρου</h1>
+  <form action="/articles/<%= article.id %>?_method=PUT" method="POST">
+    <%- include('article_fields') %>
+  </form>
+
+</main>

@@ -12,65 +12,66 @@
     src: local('Zona Pro Bold'), url('/extras/ZonaPro-Bold.woff') format('woff');
 }
 
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: 'Zona Pro Bold';
-}
 
 a {
     text-decoration: none;
 }
 
-.container {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    width: 100%;
-    background: -moz-linear-gradient(top, #1a2434 10%, #931d37 40%, #d14f51 75%, #d14f51 99%);
-    background: -webkit-linear-gradient(top, #1a2434 10%, #931d37 40%, #d14f51 75%, #d14f51 99%);
-    background: linear-gradient(to bottom, #1a2434 10%, #931d37 40%, #d14f51 75%, #d14f51 99%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1a2434', endColorstr='#ff6668', GradientType=0);
-}
-
-.first-row {
-    background-color: #1A2434;
-    height: 75px;
-    position: relative;
-}
-
-.first-row .title {
+.title {
     color: white;
     font-size: 28px;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 .options {
+    width: 72%;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 250px;
-    height: 75px;
-    padding: 10px;
-    float: right;
+    height: 10vh;
+    margin-left: 10%;
 }
 
-.opt {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.options #new {
+   color: #1a2434cc;
+   background-color: white;
+   height: 4vh;
+   width: 8vw;
+   padding-top: 1vh;
+   text-align: center;
 }
+
+#logoutform{
+    padding-bottom: 40px;
+}
+#logout{
+    background-color: rgb(255, 60, 60);
+    width: 8vw;
+    height: 4.2vh;
+}
+
+.content{
+    display: flex;
+    justify-content: space-around;
+}
+
+.articles-container{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+
+.articles {
+    background-color: white;
+    width: 45vw;
+}
+
 
 #article-body {
     display: flex;
     padding: 10px 10px 0px 10px;
-    background-color: white;
+
 }
 
 .article-image-container {
@@ -94,80 +95,185 @@ a {
 }
 
 .article-container {
-    margin: 10px;
+    margin-left: 10px;
     width: 400px;
-    display: flex;
-    flex-direction: column;
 }
 
 .article-title {
-    font-size: 18px;
+    font-size: 1.2vw;
+    color: #931d37;
+    height: 20%;
 }
 
 .date {
     font-family: 'Zona Pro Thin';
     color: rgb(120, 120, 120);
-    font-size: 10px;
+    font-size: 0.5vw;
     font-weight: bold;
+    height: 10%;
 }
 
-.markdown {
+.article-description{
     font-family: 'Zona Pro Thin';
-    color: rgb(40, 40, 40);
-    font-size: 14px;
+    color: #931d37;
+    font-size: 0.9vw;
     font-weight: bolder;
-    letter-spacing: 0.1em;
+    height: 55%;
 }
 
-.read-more {
+.article-options{
+    margin-top: 27%;
+    display: flex;
+}
+
+.read-more, #edit, .delete{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 132px;
-    height: 42px;
+    width: 6vw;
+    height: 4.5vh;
+    margin: 0.2vw;
+}
+.read-more {
+    background-color: #931d37;
 }
 
 .read-more a {
     color: white;
-    background-color: black;
-    display: inline-block;
-    position: relative;
     text-decoration: none;
-    padding-left: 20px;
-    padding-top: 12px;
 }
 
-.read-more a::after {
-    content: "";
-    background: none repeat scroll 0 0 transparent;
-    bottom: 0;
-    display: block;
-    height: 2px;
-    left: 50%;
-    position: absolute;
-    background: rgb(0, 0, 0);
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    width: 0;
+#edit{
+    background-color: #A2A3A4;
+    color:white;
+}
+.delete {
+    background-color: rgb(255, 60, 60);
+    color:white;
 }
 
-.read-more a:hover {
-    color: black;
-    padding-left: 10px;
+.players-outside-container{
+    width: 45vw;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.players-container {
+    width: 25vw;
+    background-color: white;
+}
+
+
+h3{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    color: #1A2434;
+}
+
+.player{
+    position: relative;
+    height: 50vh;
+    width: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    -webkit-box-shadow: inset 0px -150px 120px -15px #1A2434;
+    box-shadow: inset 0px -150px 120px -15px #1A2434;
+}
+
+.info {
+    padding-top: 40vh;
+    text-align: center;
+    color: white;
+    z-index: 9;
+}
+
+.inline1 {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 5px;
+    font-size: 1.7vw;
+}
+
+.hidden-stats{
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+    padding-top: 2vh;
+}
+
+.inline2{
+    width: 7vw;
+    border-top: 1px solid rgba(255, 255, 255, 0.308);
+    display: inline-block;
+    vertical-align: middle;
+    padding: 1vh;
+}
+
+.stat-title{
+    font-size: 0.5vw;
+    padding-bottom: 0.5vh;
+}
+.position{
+    font-size: 0.8vw;
+}
+
+#number, #lastname {
+    font-family: 'Zona Pro Bold';
+}
+
+#firstname {
+    font-family: 'Zona Pro Thin';
+    font-weight: bold;
+}
+
+.lastname-background {
+    position: absolute;
+    padding-top: 35vh;
+    width: 100%;
+}
+
+.lastname-background p {
+    font-size: 4vw;
+    font-style: italic;
+    color: white;
+    opacity: 0.15;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.player-options{
+    display: flex;
+    justify-content: center;
+    padding: 1vh 6vw 1vh 0vh;
+}
+
+
+/* Mouse over and mouse out events */
+
+.player:hover{
+    cursor: pointer;
+}
+.player:hover .lastname-background{
+    padding-top: 26vh;
     transition: 0.6s ease;
 }
 
-#a:hover #i {
-    padding-left: 10px;
+.player:hover .info{
+    padding-top: 30vh;
+    transition: 0.6s ease;
 }
 
-.read-more a:hover::after {
-    width: 100%;
-    left: 0;
+.player:hover .hidden-stats{
+    visibility: visible;
 }
 
-.read-more i {
-    font-size: 14px;
-    color: rgb(0, 0, 0);
+.player:not(:hover) .lastname-background , .info, .hidden-stats{
+    transition: 0.6s ease;
 }
-

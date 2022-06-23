@@ -1,0 +1,92 @@
+h1 {
+    font-size: 2.7vw;
+    color: white;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-image: url('https://i.ibb.co/X23sfCZ/3469854-Copy.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    -webkit-box-shadow: inset 0px -50px 25px -10px #1A2434;
+    box-shadow: inset 0px -50px 25px -10px #1A2434;
+}
+
+.fields-container {
+    display: flex;
+    height: 67.5vh;
+    justify-content: center;
+}
+
+.fields {
+    background-color: white;
+    width: 50%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.fields .field {
+    font-size: 2vh;
+    color: #1A2434
+}
+
+.field input,
+textarea {
+    border: 1px solid #1A2434;
+    border-radius: 2px;
+    width: 30vw;
+    color: #1A2434;
+    font-family: 'Zona Pro Thin';
+    font-weight: 50;
+}
+
+.fields .field input {
+    position: relative;
+    bottom: 0.5vh;
+}
+
+.fields .field textarea {
+    height: 10vh;
+    padding: 5px;
+}
+
+label[for=description],
+label[for=markdown] {
+    position: relative;
+    bottom: 4.5vh;
+}
+
+.options {
+    display: flex;
+    padding-right: 6vw;
+}
+
+.cancel {
+    width: 8vw;
+    background-color: rgb(255, 60, 60);
+    text-align: center;
+    height: 4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.cancel a {
+    color: white;
+    text-decoration: none;
+    font-size: 2vh;
+}
+
+.options button {
+    background-color: rgb(65, 150, 65);
+    color: white;
+    width: 8vw;
+    height: 4vh;
+    font-size: 2vh;
+}

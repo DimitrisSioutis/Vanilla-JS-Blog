@@ -1,0 +1,143 @@
+@font-face {
+    font-family: 'Zona Pro Thin';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Zona Pro Thin'), url('/extras/ZonaPro-Thin.woff') format('woff');
+}
+
+.page-title {
+    font-size: 2.7vw;
+    color: white;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-image: url('https://i.ibb.co/X23sfCZ/3469854-Copy.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    -webkit-box-shadow: inset 0px -50px 25px -10px #1A2434;
+    box-shadow: inset 0px -50px 25px -10px #1A2434;
+}
+
+.outside-container {
+    display: flex;
+    justify-content: center;
+}
+
+.player-container {
+    width: 80%;
+    background-color: white;
+}
+
+.players {
+    display: flex;
+    justify-content: space-around;
+}
+
+h3{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    color: #1A2434;
+}
+
+.player{
+    position: relative;
+    height: 50vh;
+    width: 30%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    -webkit-box-shadow: inset 0px -150px 120px -15px #1A2434;
+    box-shadow: inset 0px -150px 120px -15px #1A2434;
+}
+
+.info {
+    padding-top: 40vh;
+    text-align: center;
+    color: white;
+    z-index: 9;
+}
+
+.inline1 {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 5px;
+    font-size: 1.7vw;
+}
+
+.hidden-stats{
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+    padding-top: 2vh;
+}
+
+.inline2{
+    width: 7vw;
+    border-top: 1px solid rgba(255, 255, 255, 0.308);
+    display: inline-block;
+    vertical-align: middle;
+    padding: 1vh;
+}
+
+.stat-title{
+    font-size: 0.5vw;
+    padding-bottom: 0.5vh;
+}
+.position{
+    font-size: 0.8vw;
+}
+
+#number, #lastname {
+    font-family: 'Zona Pro Bold';
+}
+
+#firstname {
+    font-family: 'Zona Pro Thin';
+    font-weight: bold;
+}
+
+.lastname-background {
+    position: absolute;
+    padding-top: 35vh;
+    width: 100%;
+}
+
+.lastname-background p {
+    font-size: 4vw;
+    font-style: italic;
+    color: white;
+    opacity: 0.15;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+/* Mouse over and mouse out events */
+
+.player:hover{
+    cursor: pointer;
+}
+.player:hover .lastname-background{
+    padding-top: 26vh;
+    transition: 0.6s ease;
+}
+
+.player:hover .info{
+    padding-top: 30vh;
+    transition: 0.6s ease;
+}
+
+.player:hover .hidden-stats{
+    visibility: visible;
+}
+
+.player:not(:hover) .lastname-background , .info, .hidden-stats{
+    transition: 0.6s ease;
+}

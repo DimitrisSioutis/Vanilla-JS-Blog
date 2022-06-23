@@ -1,16 +1,17 @@
-const express = require('express');
-const Article = require("../models/articles_db");
-const router = express.Router();
+const router = require('express').Router();
+const connection = require('../models/database')
+const Article = connection.models.Article
+
 
 router.get('/new', (req, res) => {
-    res.render('articles/new', {
+    res.render('articles/new-article', {
         article: new Article()
     })
 })
 
 router.get('/edit/:id', async (req, res) => {
     const article = await Article.findById(req.params.id)
-    res.render('articles/edit', {
+    res.render('articles/edit-article', {
         article: article
     })
 })
@@ -20,7 +21,7 @@ router.get('/:slug', async (req, res) => {
         slug: req.params.slug
     })
     if (article == null) res.redirect('/news')  //if the slug doesnt exist ,user is redirected to the news page
-    res.render('articles/show', {
+    res.render('articles/show-article', {
         article: article
     })
 })

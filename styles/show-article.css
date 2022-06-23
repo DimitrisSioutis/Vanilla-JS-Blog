@@ -1,0 +1,67 @@
+main {
+    display: flex;
+    justify-content: center;
+    height: 85vh;
+    overflow: hidden;
+}
+
+.outside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    overflow-y: overlay;
+}
+
+.article-container {
+    margin-top: 35vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 45vw;
+    padding: 30px;
+    color: #1a2434;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* makes scrollbar disappear*/
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+.article-container h1 {
+font-size: 3rem;
+}
+
+.article-container .date {
+font-size: 0.8rem;
+padding-top: 4vh;
+font-family: 'Zona Pro Thin';
+color: rgba(0, 0, 0, 0.5);
+}
+
+.article-container .article-markdown {
+font-size: 1.2 rem;
+padding-top: 4vh;
+font-family: 'Zona Pro Thin';
+color: #1a2434d0;
+font-weight: bolder;
+}
+
+.article-container .news {
+margin-top: 8vh;
+background-color: #1A2434;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 8vw;
+height: 4vh;
+}
+
+.article-container .news a {
+text-decoration: none;
+color: white;
+}
+

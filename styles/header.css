@@ -5,6 +5,14 @@
     src: local('Zona Pro Bold'), url('/extras/ZonaPro-Bold.woff') format('woff');
 }
 
+@font-face {
+    font-family: 'Zona Pro Thin';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Zona Pro Thin'), url('/extras/ZonaPro-Thin.woff') format('woff');
+}
+
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -12,6 +20,11 @@
     font-family: 'Zona Pro Bold';
 }
 
+main {
+    position: relative;
+    top: 140.55px;          /*equals to 15vh,but we use px so the header is not minimizing with the window height*/
+    min-height: 85vh;       /*85vh + 15vh of the header means 100% viewport height which means 100% of the browser window*/
+}
 
 header {
     font-size: 12px;
@@ -20,20 +33,16 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    transition: 0.4s;
-    height: 145px;
+    height: 140.55px;
+    min-height: 140.55px;
     z-index: 100;
 }
 
-main {
-    position: relative;
-    top: 145px;
-}
 
 
 /* Navigation bar */
 .menu {
-    width: 96%;
+    width: 100%;
     float: right;
     background-color: #1A2434;
 }
@@ -121,7 +130,7 @@ main {
 .social ul i:focus {
     color: #9e2626;
     transform: scale(1.2);
-    transition: 0.4s;
+    transition: 0.3s;
 }
 
 .popup {
@@ -252,36 +261,48 @@ input,select,textarea {
     font-size: 12px;
 }
 
+
 /* Search Results */
 .autocom-box {
     position: absolute;
-    top: 6;
-    left: 51;
+    right: 57vw;
+    margin-top: 1vh;
     z-index: 9;
     color: white;
     background-color: rgb(41, 57, 85);
-    width: 180px;
+    width: 25vw;
+}
+
+.autocom-box li {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    cursor: pointer;
 }
 
 .autocom-box li :hover {
     background-color: rgb(64, 89, 133)
 }
 
-.autocom-box li {
-    width: 100%;
-    font-size: 12px;
-    list-style: none;
-    display: block; /*center text*/
-    cursor: pointer;
-    font-family: 'Zona Pro Thin';
-}
-
-.autocom-box li a {
-    height: 35px;
-    padding: 10px;
+.autocom-box li .autocom-title {
+    height: 8vh;
     color: white;
     text-decoration: none; /*removes underline*/
-    display: block; /*links clickable everywhere*/   
+    width: 75%;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 3vh;
+    
+}
+
+.autocom-box li .autocom-image{
+    height: 8vh;
+    width: 25%
+}
+
+.autocom-box li .autocom-image img{
+    width: 100%;
+    height: 8vh;
 }
 
 .toggle-button {

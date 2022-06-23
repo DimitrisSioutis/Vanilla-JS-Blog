@@ -1,0 +1,14 @@
+<link href="../styles/show-article.css" type="text/css" rel="stylesheet">
+<main>
+    <div class="outside" style="background: url('<%- article.image %>') no-repeat center fixed;">
+        <div class="article-container" id="article-container">
+            <h1><%= article.title %></h1>
+            <div class="date"><%= article.createdAt.toLocaleDateString() %></div>
+            <div class="article-markdown"><%- article.markdown %></div>
+            <div class="news">
+                <a href="/news">Όλα τα Νέα</a>
+              </div>
+            </div>
+        </div>
+    </div>
+</main>
