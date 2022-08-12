@@ -1,0 +1,14 @@
+
+<div class="article-body">
+    <div class="article-image-container">
+        <img src=" <%= article.image %> " onclick="window.location='http://localhost:8000/articles/<%= article.slug %>';" />
+    </div>
+    <div class="article-container">
+        <h4 class="article-title"><%= article.title %></h4>
+        <div class="date"><%= article.createdAt.toLocaleDateString() %></div>
+        <div class="article-description"><%= article.description %></div>
+        <div class="read-more" id="read-more">
+            <a class="read-more" id="a" href="articles/<%= article.slug %>"><span>Περισσότερα</span><i class="fa-solid fa-arrow-right" ></i></a>
+        </div>
+    </div>
+</div>

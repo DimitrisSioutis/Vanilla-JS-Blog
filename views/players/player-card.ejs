@@ -1,28 +1,29 @@
-<div class="player" style="background-image: url('<%= player.image %>');">
-    <div class="lastname-background">
-            <p class="lastname-paragraph"><%=player.lastname%></p>
-    </div>
-    <div class="info" id="info" href="players/<%= player.slug %>">
-        <div class="inline1" id="number"><%=player.number%></div>
-        <div class="inline1" id="firstname"><%=player.firstname%></div>
-        <div class="inline1" id="lastname"><%=player.lastname%></div>
-        <div class="position"><%= player.position%></div>
 
-        <div class="hidden-stats">
-            <div class="inline2">
-                <div class="stat-title">Ημ/νία Γέννησης</div>
-                <div><%= player.birthday%></div>
-            </div>
+    <div class="player" style="background-image: url('<%= player.image %>');" onclick="window.location='http://localhost:8000/players/<%= player.slug %>';">
+        <div class="lastname-background">
+            <p class="lastname-paragraph"><%- player.lastname%></p>
+        </div>
+        <div class="info" id="info" >
+            <div class="inline1" id="number"><%=player.number%></div>
+            <div class="inline1" id="firstname"><%=player.firstname%></div>
+            <div class="inline1" id="lastname"><%=player.lastname%></div>
+            <div class="position"><%= player.position%></div>
 
-            <div class="inline2">
-                <div class="stat-title">Συμμετοχές</div>
-                <div><%= player.appearances%></div>
-            </div>
+            <div class="hidden-stats">
+                <div class="inline2">
+                    <div class="stat-title">Ημ/νία Γέννησης</div>
+                    <div><%= player.birthday%></div>
+                </div>
 
-            <div class="inline2">
-                <div class="stat-title">Γκολ</div>
-                <div><%= player.goals%></div>
+                <div class="inline2">
+                    <div class="stat-title">Συμμετοχές</div>
+                    <div><%= player.appearances%></div>
+                </div>
+
+                <div class="inline2">
+                    <div class="stat-title">Γκολ</div>
+                    <div><%= player.goals%></div>
+                </div>
             </div>
         </div>
     </div>
-</div>

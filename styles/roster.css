@@ -21,34 +21,36 @@
     box-shadow: inset 0px -50px 25px -10px #1A2434;
 }
 
-.outside-container {
+.player-containers {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    width: 100vw;
 }
 
-.player-container {
-    width: 80%;
+.row{
     background-color: white;
+    height: 60vh;
 }
 
-.players {
-    display: flex;
-    justify-content: space-around;
-}
-
-h3{
+.row h3{
     height: 100px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     font-size: x-large;
     color: #1A2434;
 }
 
+.players{
+    display: flex;
+    justify-content: space-around;
+}
+
 .player{
+    display:block;
     position: relative;
     height: 50vh;
-    width: 30%;
+    width: 25%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -73,9 +75,9 @@ h3{
 }
 
 .hidden-stats{
-    display: flex;
+    display: none;
+    opacity: 0;
     justify-content: center;
-    visibility: hidden;
     padding-top: 2vh;
 }
 
@@ -84,7 +86,7 @@ h3{
     border-top: 1px solid rgba(255, 255, 255, 0.308);
     display: inline-block;
     vertical-align: middle;
-    padding: 1vh;
+    padding-top: 2vh;
 }
 
 .stat-title{
@@ -106,17 +108,20 @@ h3{
 
 .lastname-background {
     position: absolute;
-    padding-top: 35vh;
+    padding-top: 34vh;
     width: 100%;
 }
 
 .lastname-background p {
     font-size: 4vw;
     font-style: italic;
-    color: white;
-    opacity: 0.15;
     letter-spacing: 2px;
     text-align: center;
+    opacity: 0.8;
+    background: -webkit-linear-gradient(rgb(255, 255, 255), rgba(255, 255, 255, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
 }
 
 /* Mouse over and mouse out events */
@@ -126,18 +131,17 @@ h3{
 }
 .player:hover .lastname-background{
     padding-top: 26vh;
-    transition: 0.6s ease;
+    transition: 0.4s ease;
 }
 
 .player:hover .info{
     padding-top: 30vh;
-    transition: 0.6s ease;
+    transition: 0.4s ease;
 }
 
 .player:hover .hidden-stats{
-    visibility: visible;
+    opacity: 1;
+    display: block;
+    transition: 0.4s ease;
 }
 
-.player:not(:hover) .lastname-background , .info, .hidden-stats{
-    transition: 0.6s ease;
-}

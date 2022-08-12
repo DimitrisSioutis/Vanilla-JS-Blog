@@ -20,10 +20,9 @@ router.get('/:slug', async (req, res) => {
     const article = await Article.findOne({    //we use findOne instead of find cause we need one particular article
         slug: req.params.slug
     })
+    const articles = await Article.find()
     if (article == null) res.redirect('/news')  //if the slug doesnt exist ,user is redirected to the news page
-    res.render('articles/show-article', {
-        article: article
-    })
+    res.render('articles/show-article', {article: article ,articles:articles})
 })
 
 router.post('/', async (req, res, next) => {

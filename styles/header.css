@@ -12,7 +12,6 @@
     src: local('Zona Pro Thin'), url('/extras/ZonaPro-Thin.woff') format('woff');
 }
 
-
 * {
     box-sizing: border-box;
     padding: 0;
@@ -20,10 +19,16 @@
     font-family: 'Zona Pro Bold';
 }
 
+body{
+    background-color: #1A2434;
+}
+
 main {
     position: relative;
-    top: 140.55px;          /*equals to 15vh,but we use px so the header is not minimizing with the window height*/
-    min-height: 85vh;       /*85vh + 15vh of the header means 100% viewport height which means 100% of the browser window*/
+    top: 124px;
+    /*equals to 15vh,but we use px so the header is not minimizing with the window height*/
+    min-height: 85vh;
+    background: linear-gradient(0deg, rgba(147, 29, 55, 1) 0%, rgba(26, 36, 52, 1) 75%);
 }
 
 header {
@@ -32,199 +37,166 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 140.55px;
-    min-height: 140.55px;
     z-index: 100;
 }
 
-
-
-/* Navigation bar */
-.menu {
+.logo-socials{
     width: 100%;
-    float: right;
+    display: flex;
+    justify-content: space-around;
+}
+
+.logo:hover {
+    filter: opacity(1.2);
+    -webkit-filter: opacity(1.2);
+    cursor: pointer;
+}
+
+.nav-bar {
+    position: fixed;
+    width: 100vw;
+    background-color: #101620;
+    height: 120px;
+}
+
+.nav-bar::after{
+    display: block;
+    content: '';
+    width: 100vw;
+    height: 20px;
     background-color: #1A2434;
 }
 
-.nav {
-    display: flex;
-    justify-content: space-around;
-    margin: 1px;
-    line-height: 45px;
-    border-bottom: 2px solid;
-    border-image-slice: 1;
-    border-width: 2px;
-    border-color: white;
+.menu {
+    width: 80vw;
+    height: 60px;
+    background-color: #1A2434;
+    margin-left: 22vw;
+    margin-top: 60px;
+    clip-path: polygon(3% 0, 100% 0%, 100% 100%, 0% 100%);
 }
 
-.nav li {
-    width: 100%;
-    list-style: none;
-    text-align: center;
-    display: block;
+.bottom {
+    width: 100vw;
+    height: 20px;
+    background-color: #1A2434;
 }
 
-.nav li a {
-    color: white;
-    text-decoration: none; /*removes underline*/
-    display: block; /*links clickable everywhere*/
-}
 
-.nav li:hover {
-    cursor: pointer;
-    background-color: #304361
-}
-
-.logo {
-    float: left;
-    width: 25%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.logo img{
+.logo img {
+    width: 120px;
+    z-index: 2;
+    margin-top: 1px;
     filter: opacity(0.9);
     -webkit-filter: opacity(0.9);
 }
 
-.logo img:hover{
-    filter: opacity(1.2);
-    -webkit-filter: opacity(1.2);
+
+.nav {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    line-height: 5vh;
 }
 
-
-.header-right-side {
-    padding-top: 20px;
-    width: 75%;
-    float: right;
+#home{
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+}
+.nav li{
+  position:relative;
+  height: 60px;
+  width: 400px;
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
 }
 
-/* Social Media Links */
+.nav li::before {
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  background-color:rgb(140, 30, 30);
+  transform: scaleX(0);
+    transition: transform 200ms ease-in-out;
+}
+
+.nav li a{
+  color: white;
+  text-decoration: none; /*removes underline*/
+  display: block; /*links clickable everywhere*/
+  height:97%;
+  width: 100%;
+  text-align:center;
+  padding-top: 8px;
+  background-color: #1A2434;
+  clip-path: polygon(0 0, 100% 0, 89% 100%, 11% 100%);
+}
+
+#a-home{
+    height: 100%;
+    clip-path: polygon(10% 0, 100% 0%, 89% 96%, 0 100%);
+  padding-left: 2vw;
+}
+
+#news{
+    height: 100%;
+    clip-path: polygon(0 0, 100% 0, 89% 100%, 11% 96%);
+}
+
+.nav li:hover::before,
+.nav li:focus::before{
+  transform: scaleX(1);
+}
+
+.nav li a:hover{
+  background-color: #101620;
+  transition: 0.3s ease;
+}
+
+/* Socials */
+
 .social {
     display: flex;
-    width: 180px;
-    height: 40px;
-    font-size: 12px;
     transition: 0.4s;
-    float: right;
-    margin-right: 60px;
+}
+
+.social span {
+    width: 250px;
+    text-align: center;
+    color: white;
+    margin-top: 22px;
+    font-size: 11px;
+    letter-spacing: 0.2px;
 }
 
 .social ul {
+    margin-top: 16px;
+    width: 150px;
     display: flex;
     list-style: none;
-    float: right;
-    width:100%;
     justify-content: space-around;
 }
 
-.social ul i {
-    font-size: 25px;
-    color: white;
+.social ul li a {
+    font-size: 22px;
+    color: rgb(255, 255, 255);
 }
 
-.social ul i:hover,
-.social ul i:focus {
-    color: #9e2626;
+.social ul a:hover,
+.social ul a:focus {
+    color: #931d37;
     transform: scale(1.2);
-    transition: 0.3s;
-}
-
-.popup {
-    position: relative;
-    display: inline-block;
+    transition: 0.4s;
     cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-/* Social Media links popup */
-.popup .popuptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: #9e2626;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 8px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: -180%;
-    left: 50%;
-    margin-left: -60px;
-  }
-  
-  /* Popup arrow */
-.popup .popuptext::after {
-    content: "";
-    position: absolute;
-    top:-30%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color:  transparent transparent #9e2626 transparent ;
-}
-
-/* Toggle this class - hide and show the popup */
-.popup .show {
-    visibility: visible;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s;
-}
-
-/* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Header on Scroll down */
-
-header.sticky {
-    background: transparent;
-    position: fixed;
-    /* position fixed & z-index makes the header always appear in front of other elements */
-    z-index: 100;
-}
-
-header.sticky .logo,
-header.sticky .search,
-header.sticky .social,
-header.sticky .header-right-side .social ul
-{
-    visibility: hidden;
-    height: 0px;  
-}
-
-header.sticky .header-right-side .social ul i{
-    font-size: 0px;
-}
-header.sticky .header-right-side{
-    padding-top: 0;
 }
 
 /* Search */
+
 .search {
-    border-bottom: 1px solid white;
+    margin-left: 12vw;
+    margin-top: 18px;
     width: 175px;
 }
 
@@ -256,71 +228,69 @@ button {
     position: absolute;
 }
 
-input,select,textarea {
+input,
+select,
+textarea {
     color: #ffffff;
     font-size: 12px;
 }
 
+.logo-socials {
+    position: fixed;
+    display: flex;
+}
 
 /* Search Results */
 .autocom-box {
     position: absolute;
-    right: 57vw;
-    margin-top: 1vh;
-    z-index: 9;
+    right: 38vw;
+    margin-top: 97px;
     color: white;
-    background-color: rgb(41, 57, 85);
+    background-color: #1A2434;
     width: 25vw;
 }
 
+
+
 .autocom-box li {
-    width: 100%;
-    list-style: none;
-    display: flex;
-    cursor: pointer;
-}
-
-.autocom-box li :hover {
-    background-color: rgb(64, 89, 133)
-}
-
-.autocom-box li .autocom-title {
     height: 8vh;
-    color: white;
-    text-decoration: none; /*removes underline*/
-    width: 75%;
+    list-style: none;
     font-size: 12px;
-    text-align: center;
-    padding-top: 3vh;
     
 }
 
-.autocom-box li .autocom-image{
-    height: 8vh;
-    width: 25%
-}
-
-.autocom-box li .autocom-image img{
+.autocom-box li a {
+    text-decoration: none;
+    color: white;
     width: 100%;
-    height: 8vh;
-}
-
-.toggle-button {
-    position: absolute;
-    top: .75rem;
-    right: 1rem;
-    display: none;
-    flex-direction: column;
+    display: flex;
     justify-content: space-between;
-    left: 50%;
-    top: 35%;
-    width: 60px;
-    height: 40px;
+    align-items: center;
+    padding-left: 2vw;
 }
 
-.toggle-button .bar {
-    height: 6px;
-    width: 100%;
-    background-color: white;
-    border-radius: 10px;
+.autocom-box li img {
+    height: 8vh;
+    width: 5vw;
+}
+
+.autocom-box li :hover {
+    background-color: #931d37;
+    transition: 0.3s ease;
+}
+.mobile-menu .mobile-nav{
+    position: relative;
+    width: 80vw;
+    height: 600px;
+    background-color: red;
+}
+
+@keyframes load {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }

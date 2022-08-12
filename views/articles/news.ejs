@@ -2,6 +2,37 @@
     <h1 class="page-title">Νέα</h1>
     <link href="/styles/articles.css" type="text/css" rel="stylesheet" />
     
-    <%- include('all-articles.ejs') %>
+    <div class="articles-container">
+        <div class="articles"> 
+        <% uniqueDates.forEach(date => { %>
+                    <div class="articles-datebased">
+                        <div class="article-day ">
+                            <p class="weekday">
+                                <%= new Date(date).toLocaleDateString('gr', { weekday: 'long' }) %>
+                            </p>
+                            <div class="day-month">
+                                <p>
+                                    <%= new Date(date).toLocaleDateString('gr', { day: 'numeric'}) %>
+                                </p>
+                                <p style="margin-left: '10px'">
+                                    <%= new Date(date).toLocaleDateString('gr', { month: 'long'}) %>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="article-list">                          
+                            <% articles.forEach(article => { %>
+                                <% if( article.createdAt.toString().slice(0,10) === date){  %>
+                                    <%- include('article.ejs' ,{article:article} ) %>   
+                                <% } %>       
+                            <% }) %>
+                        </div>                                                  
+                    </div>
+                    <div class="line-break">
+                        <div class="skewd"></div>
+                    </div>
+        <% }) %>
+        </div>
+    </div>
 
 </main>

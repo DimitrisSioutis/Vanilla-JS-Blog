@@ -1,14 +1,40 @@
 <link href="../styles/show-article.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <main>
-    <div class="outside" style="background: url('<%- article.image %>') no-repeat center fixed;">
-        <div class="article-container" id="article-container">
-            <h1><%= article.title %></h1>
-            <div class="date"><%= article.createdAt.toLocaleDateString() %></div>
-            <div class="article-markdown"><%- article.markdown %></div>
-            <div class="news">
-                <a href="/news">Όλα τα Νέα</a>
-              </div>
+<div class="page-wrapper">
+    <div class="outside" style="background: url('<%- article.image %>') no-repeat center fixed; ">
+        <div class="wrapper">
+            <div class="show-article-container" id="show-article-container">
+                <h1 class="show-article-title"><%= article.title %></h1>
+                <div class="show-article-date"><%= article.createdAt.toLocaleDateString() %></div>
+                <div class='show-article-markdown'><%= article.markdown %></div>           
+            </div>
+            <div class="share-article">
+                <span>Μοιράσου το :</span>
+                <ul>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=example.org" target="_blank" style="text-decoration: none"><li class="facebook"> <i class="fa fa-facebook" style="color: white;"></i><span>Facebook</span></li></a>
+                    <a href="https://twitter.com/intent/tweet?text=Hello%20world" target="_blank" style= "text-decoration: none"><li class="instagram"><i class="fa fa-twitter" style="color: white;"></i> <span>Twitter</span></li></a>
+                </ul> 
+            </div>
+            <div class="line">
+                <hr/><img src="https://i.ibb.co/rwf4qGv/logo.png"  alt="ΑΟ ΔΙΑΝΑ"/><hr/>
+            </div>
+            <div class="other-articles-container">
+                <h1>Δείτε Επίσης</h1>
+                <div class="other-articles">
+                <% articles.slice(0, 3).forEach(article => { %>
+                <div class="clickable-card" to='/articles/<%article.slug %>' style="text-decoration: none;" onclick="window.location='http://localhost:8000/articles/<%= article.slug %>';">
+                    <div class="article-card" style="background: url('<%- article.image %>')">
+                        <div class="article-card-info">
+                            <p class="article-card-title"> <%= article.title  %></p>
+                            <p class="article-card-description"> <%= article.description %> </p> 
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+                </div>
             </div>
         </div>
     </div>
+</div>
 </main>

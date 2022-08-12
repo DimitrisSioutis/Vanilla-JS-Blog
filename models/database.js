@@ -69,6 +69,9 @@ const PlayerSchema = new mongoose.Schema({
     image: {
         type: String
     },
+    background: {
+        type: String
+    },
     slug: {
         type: String,
         unique: true 

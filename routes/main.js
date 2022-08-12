@@ -10,8 +10,7 @@ main.use(session({                                                          // h
     secret: process.env.SECRET,
     resave: false,                                                          // don't save session if unmodified
     saveUninitialized: true,                                                // don't create session until something stored
-    store: MongoStore.create({mongoUrl:process.env.DATABASE_URL}),          // where to save the session
-    
+    store: MongoStore.create({mongoUrl:process.env.DATABASE_URL}),          // where to save the session   
 }))
 
 const isAuth= (req,res,next)=>{
@@ -38,8 +37,15 @@ main.post("/search", async(req,res) => {
 })
 
 main.get("/news", async(req, res) => {
-    const articles =  await Article.find().sort({ createdAt: 'desc' }) 
-    res.render('articles/news', {articles: articles});
+    const articles =  await Article.find().sort({ createdAt: 'desc' })
+    const dates = []
+    articles.forEach(article =>{                    /* we create an array with the date sliced for 0,10 which gives us output like : 2022-1-1  */
+        dates.push(article.createdAt.toString().slice(0,10))   /* we slice cause we want to eliminate any duplicates and keep only the day an article was created,not exact moment */
+    })
+
+
+    const uniqueDates = [...new Set(dates)];  
+    res.render('articles/news', {articles: articles , uniqueDates: uniqueDates});
 });
 
 main.get("/team", async(req, res) => {

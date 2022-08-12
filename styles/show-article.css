@@ -5,25 +5,40 @@ main {
     overflow: hidden;
 }
 
+.page-wrapper {
+    display: flex;
+    justify-content: center;
+    height: 85vh;
+    overflow: hidden;
+    transition: transform 1s;
+}
+
 .outside {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     overflow-y: overlay;
+    margin-top: 40px;
+    
 }
 
-.article-container {
+.wrapper{
     margin-top: 35vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: center; 
+    background-color: white;
+    -webkit-box-shadow: 0px -10px 40px 2px #000000; 
+    box-shadow: 0px -10px 40px 2px #000000;
+}
+.show-article-container {  
+    display: flex;
+    flex-direction: column;
     width: 45vw;
     padding: 30px;
-    color: #1a2434;
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: #1a2434;  
 }
 
 /* makes scrollbar disappear*/
@@ -31,26 +46,27 @@ main {
     width: 0px;
 }
 
-.article-container h1 {
-font-size: 3rem;
+.show-article-container .show-article-title{
+font-size: 2.5rem;
 }
 
-.article-container .date {
-font-size: 0.8rem;
-padding-top: 4vh;
-font-family: 'Zona Pro Thin';
-color: rgba(0, 0, 0, 0.5);
+.show-article-container .show-article-date {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.7rem;
+    padding-top: 2vh;
+    color: rgba(0, 0, 0, 0.5);
 }
 
-.article-container .article-markdown {
+.show-article-container .show-article-markdown {
 font-size: 1.2 rem;
-padding-top: 4vh;
+padding-top: 8vh;
 font-family: 'Zona Pro Thin';
 color: #1a2434d0;
 font-weight: bolder;
+letter-spacing: 1px;
 }
 
-.article-container .news {
+.show-article-container .news {
 margin-top: 8vh;
 background-color: #1A2434;
 display: flex;
@@ -60,8 +76,172 @@ width: 8vw;
 height: 4vh;
 }
 
-.article-container .news a {
+.show-article-container .news a {
 text-decoration: none;
 color: white;
+}
+
+.share-article{
+    margin-top: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 25vw;
+    height: 2vw;
+}
+
+.share-article span{
+    color: #1a2434;
+    font-size: 0.8rem;
+}
+
+.share-article ul{
+    width: 18vw;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.share-article ul li{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 3.5vh;
+    width: 7vw;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.share-article ul .facebook{
+    background-color: #324b81;
+}
+
+.share-article ul .instagram{
+    background-color: #7940b9;
+}
+
+.share-article ul li:hover{
+    -webkit-box-shadow: 0px 0px 6px 1px #000000; 
+    box-shadow: 0px 0px 6px 1px #000000;
+    cursor: pointer;
+}
+
+.share-article ul li span{
+    font-size: 15px;
+    color: white;
+    letter-spacing: -0.2px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.line{
+    padding-top: 15vh;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.line hr{
+    width: 40%;
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+.line img{
+    position: relative;
+    width: 10%;
+    bottom: 2vh;
+    
+}
+
+.other-articles-container{
+    margin-top: 15vh;
+    -webkit-box-shadow: 0px 0px 20px 5px #00000075; 
+    box-shadow: 0px 0px 20px 5px #00000075;
+    height: 50vh;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: -moz-linear-gradient(top, #1a2434 40%, #931d37 70%, #d14f51  );
+    background: -webkit-linear-gradient(top, #1a2434 40%, #931d37 70%, #d14f51 );
+    background: linear-gradient(to bottom, #1a2434 40%, #931d37 70%, #d14f51 );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1a2434', endColorstr='#ff6668', GradientType=0);
+    
+}
+
+.other-articles-container h1{
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    letter-spacing: 1px;
+
+}
+
+.other-articles{
+    width: 65vw;
+    background-color: white;
+    height: 35vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.clickable-card{
+    display: block;
+    cursor: pointer;
+}
+.article-card{
+    -webkit-box-shadow: 0px 0px 20px 1px #919191; 
+    box-shadow: 0px 0px 20px 1px #919191;
+    width: 18vw;
+    height: 28vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+
+.article-card-info{
+    position: relative;
+    top: 18vh;
+    height: 10vh;
+    background-color: white;
+}
+.article-card-title{
+    color: #1a2434;
+    text-align: center;
+    padding-top: 2vh;
+    font-size: 1rem
+}
+
+.article-card-description{
+    opacity: 0;
+    position: relative;
+    top: 7vh;
+    text-align: center;
+    font-size: 0.6rem;
+    font-family: 'Zona Pro Thin';
+    font-weight: 1000;
+    color: #1a2434;
+    margin: 2px;
+}
+
+.article-card:hover .article-card-info{
+    transition: 0.4s ease;
+    height: 15vh;
+    top:13vh;
+}
+
+.article-card:hover .article-card-description{
+    opacity: 1;
+    transition: 0.6s ease;
+    top: 1vh;
 }
 

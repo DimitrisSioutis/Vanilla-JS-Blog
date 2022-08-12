@@ -2,12 +2,12 @@
     font-family: 'Zona Pro Thin';
     font-style: normal;
     font-weight: normal;
-    src: local('Zona Pro Thin'), url('/public/ZonaPro-Thin.woff') format('woff');
+    src: local('Zona Pro Thin'), url('/extras/ZonaPro-Thin.woff') format('woff');
 }
+
 
 .carousel{
     display: flex;
-    box-shadow: 0 0.4rem 1.2rem 0 rgb(0 0 0 / 40%);
 }
 
 .column {
@@ -18,8 +18,8 @@
     -o-background-size: cover;
     background-size: cover;
     background-position: center;
-    -webkit-box-shadow: inset 0px -70px 30px -5px #1A2434; 
-    box-shadow: inset 0px -70px 30px -5px #1A2434;
+    -webkit-box-shadow: inset 0px -80px 25px -7px #1A2434; 
+    box-shadow: inset 0px -80px 25px -7px #1A2434;
     cursor: pointer;
     text-align: center;
 }
@@ -29,17 +29,19 @@
     height: 20px;
     color: rgb(255, 255, 255);
     font-size: 16px;
-    margin-top: 420px;
+    margin-top: 440px;
     font-size: 16px;
-    text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+    animation: load 1.3s;
 }
 
 .column .description{
     text-align: center;
     font-size: 10px;
     color: rgb(255, 255, 255);
-    visibility: hidden;
-    text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+    opacity: 0;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+    margin: 2vh;
 }
 
 #column1{
@@ -57,11 +59,72 @@
 
 .column:hover .title {
     font-size: 30px;
-    margin-top: 360px;
+    margin-top: 400px;
     transition: 0.3s ease;
 }
 
 .column:hover .description{
-    margin-top: 20px;
-    visibility: visible;
+    transition: 0.5s ease;
+    margin-top: 2vh;
+    opacity: 1;
+}
+
+.container{
+    background-color: #eeeff4;
+    width: 80vw;
+    margin-left: 10vw;
+    margin-top: 1vh;
+}
+
+.latest-news{
+    background-color: white;
+    position: relative;
+    left: 18.5vw;
+    top: 4vh;
+    width: 43vw;
+    height: 60px;
+    -webkit-box-shadow: 0px 0px 5px 2px #221c352c; 
+    box-shadow: 0px 0px 5px 2px #221c352c;
+    font-size: 25px;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.latest-news:hover .blue-span {
+    transform: translateY(-5px);
+}
+
+.latest-news:hover .red-span{
+    transform: translateY(5px);
+}
+
+.blue-span{
+    position: relative;
+    width: 10px;
+    height: 50px;
+    top: 5px;
+    background-color: #1A2434;
+    margin-left: 5px;
+    transition: 0.2s;
+}
+
+.red-span{
+    position: relative;
+    bottom: 5px;
+    width: 10px;
+    height: 50px;
+    background-color: rgba(147,29,55,1) ;
+    margin-right: 5px;
+    transition: 0.2s;
+}
+
+.home-container p{
+    padding-top: 15px;
+}
+
+.articles-container{
+    margin-top: 2vh;
 }

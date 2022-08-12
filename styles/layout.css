@@ -1,4 +1,7 @@
 main{
+    position: relative;
+    top: 15vh;          /*equals to 15vh,but we use px so the header is not minimizing with the window height*/
+    min-height: 85vh;
     background: -moz-linear-gradient(top, #1a2434 40%, #931d37 50%, #d14f51 85%,#d14f51 );
     background: -webkit-linear-gradient(top, #1a2434 40%, #931d37 50%, #d14f51 85%, #d14f51 );
     background: linear-gradient(to bottom, #1a2434 40%, #931d37 50%, #d14f51 85%,#d14f51 );
@@ -6,68 +9,48 @@ main{
 }
 
 .mobile-menu{
-    visibility: hidden;
+    display: none;
 }
 
-@media (max-width: 1000px) {
-    .toggle-button{
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    left: 50%;
+    top: 35%;
+    width: 60px;
+    height: 40px;
+}
+
+.toggle-button .bar {
+    height: 6px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+@media (max-width: 1800px) {
+
+    .header{
         display: flex;
     }
-
-    .header-right-side{
+    .menu{
         display: none;
     }
 
-    header{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+    .bottom{
+        display: none;
+    }
+    .social{
+        margin-left: 0;
     }
 
-    .nav {
-        flex-direction: column;
-        width: 100%;
-        border: none;
-        background-color: #1A2434;
-        line-height: 100px;
+    .social span{
+        display: none;
     }
-
-    .mobile-menu{
-        width: 100%;
-    }
-
-    .mobile-menu{
-        visibility: none;
-    }
-
-    .mobile-menu.active{
-        visibility: visible;
-        height: 100%;
-    }
-
-    header.active{
-        height: 100%;
-    }
-    .logo{
-        padding-top: 12px;
-    }
-
 }
 
-@media (max-width: 1400px) {
 
-    .popup .popuptext {
-        width: 60px;
-        margin-left: -30px;
-        bottom: -250%;
-    }
-
-    .social {
-        width: 100px;
-        font-size: 10px;
-    }
-    
-    .social ul i {
-        font-size: 16px;
-    }
-}

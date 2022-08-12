@@ -3,16 +3,29 @@
 <link rel="shortcut icon" href="/extras/logo.ico">
 <main>
     <div class="carousel">
-        <% for(let i=0; i<=2; i++){%>
-            <div class="column" id = "column<%- i %>" style="background-image: url('<%- articles[i].image %>');"
-                onclick="window.location='http://localhost:8000/articles/<%= articles[i].slug %>';">
-                <p class="title"> <%- articles[i].title %> </p>
-                <p class="description"> <%- articles[i].description %> </p>
+        <% articles.slice(0, 3).forEach(article =>{%>
+            <div class="column" id = "column<%- articles.indexOf(article)%>" style="background-image: url('<%- article.image %>');"
+                onclick="window.location='http://localhost:8000/articles/<%= article.slug %>';">
+                <p class="title"> <%- article.title %> </p>
+                <p class="description"> <%- article.description %> </p>
             </div>
-        <%}%>
+        <%})%>
     </div>
 
-    <%- include('../articles/all-articles.ejs') %>
+    <div class="container">
+        <div class="latest-news">
+           <div class="blue-span"></div>
+           <p>Τελευταία Νέα</p>
+           <div class="red-span"></div>
+        </div>
+        <div class="articles-container">
+            <div class="articles"> 
+                <% articles.slice(0, 4).forEach(article=>{ %>
+                    <%- include('../articles/article.ejs' ,{article:article} ) %>
+                <% }) %>
+            </div>
+        </div>
+     </div>
 
 </main>
 
