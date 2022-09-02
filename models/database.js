@@ -1,9 +1,12 @@
 const mongoose = require('mongoose');
 const slugify = require('slugify');
-const connection = mongoose.createConnection('mongodb://localhost/blog', {
+
+
+const connection = mongoose.createConnection(process.env.DATABASE_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
+
 
 
 const UserSchema = new mongoose.Schema({
