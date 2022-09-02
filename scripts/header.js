@@ -23,7 +23,7 @@ searchInput.addEventListener('input',e =>{
         input.forEach((item, index) => {
             if (index > 0) searchResults.innerHTML;
             searchResults.innerHTML += `<li>
-                                            <a href="articles/${item.slug}">
+                                            <a href="article/${item.slug}">
                                                 ${item.title}
                                                 <img src="${item.image}"/>
                                             </a>
