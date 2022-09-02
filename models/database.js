@@ -2,8 +2,7 @@ const mongoose = require('mongoose');
 const slugify = require('slugify');
 const connection = mongoose.createConnection('mongodb://localhost/blog', {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true
+    useUnifiedTopology: true
 });
 
 
