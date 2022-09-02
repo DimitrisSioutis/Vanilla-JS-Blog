@@ -1,0 +1,59 @@
+.contact-wrapper {
+  display: flex;
+  background-color: white;
+  width: 90%;
+  margin-left: 5%;
+  height: 80vh;
+}
+
+.left-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.info p {
+  font-size: 20px;
+  color: #1A2434;
+  margin-top: 15px;
+}
+
+.map {
+  margin-left: 5vw;
+  margin-top: 5%;
+}
+
+.widgets {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+.fb-page, .insta ,.yt ,.map{
+  box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.25);
+  margin-bottom: 20px;
+}
+
+.yt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 150px;
+}
+
+.socials-p{
+  color: #1A2434;
+  width: 50%;
+  height: 200px;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}

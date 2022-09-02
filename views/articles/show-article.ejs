@@ -1,6 +1,6 @@
 <link href="../styles/show-article.css" type="text/css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<main>
+
 <div class="page-wrapper">
     <div class="outside" style="background: url('<%- article.image %>') no-repeat center fixed; ">
         <div class="wrapper">
@@ -23,7 +23,7 @@
                 <h1>Δείτε Επίσης</h1>
                 <div class="other-articles">
                 <% articles.slice(0, 3).forEach(article => { %>
-                <div class="clickable-card" to='/articles/<%article.slug %>' style="text-decoration: none;" onclick="window.location='http://localhost:8000/articles/<%= article.slug %>';">
+                <div class="clickable-card" to='/articles/<%article.slug %>' style="text-decoration: none;" onclick="window.location='http://localhost:8000/article/<%= article.slug %>';">
                     <div class="article-card" style="background: url('<%- article.image %>')">
                         <div class="article-card-info">
                             <p class="article-card-title"> <%= article.title  %></p>
@@ -37,4 +37,3 @@
         </div>
     </div>
 </div>
-</main>

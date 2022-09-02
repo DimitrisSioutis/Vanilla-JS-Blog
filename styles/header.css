@@ -23,14 +23,6 @@ body{
     background-color: #1A2434;
 }
 
-main {
-    position: relative;
-    top: 124px;
-    /*equals to 15vh,but we use px so the header is not minimizing with the window height*/
-    min-height: 85vh;
-    background: linear-gradient(0deg, rgba(147, 29, 55, 1) 0%, rgba(26, 36, 52, 1) 75%);
-}
-
 header {
     font-size: 12px;
     background: #1A2434;
@@ -140,7 +132,7 @@ header {
   padding-left: 2vw;
 }
 
-#news{
+#contactus{
     height: 100%;
     clip-path: polygon(0 0, 100% 0, 89% 100%, 11% 96%);
 }

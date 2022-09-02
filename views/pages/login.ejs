@@ -1,23 +1,49 @@
 <link href="/styles/login.css" type="text/css" rel="stylesheet" />
-<main>
 
-    <div class="login-container">
-        <form action="/login" class="login-form" method="POST">
-            <h1>Είσοδος</h1>
-            <div class="fields">
-                <div class="username">
-                    <label for="username">Username :</label>
-                    <input type="text" id="username" name="username" placeholder="Username">
-                </div>
-                <div class="password">
-                    <label for="password">Password :</label>
-                    <input type="password" id="password" name= "password" placeholder="Password">
-                </div>
-                <div class="submit">
-                    <input type="submit" id="login"  value="Log In">
-                </div>   
-            </div>
-        </form>
+<div class='bg-img'><img src='https://i.ibb.co/rwf4qGv/logo.png' /></div>
+<form action="/admin/login" class="login-form" id="login-form" method="POST">
+    <h1>Login</h1>
+
+    <div class="fields">
+        <div class="username">
+            <label for="username">Username :</label>
+            <input type="text" id="username" name="username" placeholder="Username">
+        </div>
+        <span id="user-error"> <%= message %></span>
+        <div class="password">
+            <label for="password">Password :</label>
+            <input type="password" id="password" name="password" placeholder="Password">
+        </div>
+        <span id="pass-error"> <%= message %></span>
+        <div class="submit">
+            <input type="submit" id="login" value="Είσοδος">
+        </div>
     </div>
-</main>
+</form>
 
+
+<script>
+    var userError = document.getElementById('user-error')
+    var passError = document.getElementById('pass-error')
+    var usernameInput = document.getElementById('username')
+    var passwordInput = document.getElementById('password')
+
+
+    if (userError.innerText === 'wrong username') {
+        userError.style.opacity = "1";
+        usernameInput.addEventListener('change', (e) => {
+            if (e.target.value === '') {
+                userError.style.opacity = "0";
+            }
+        })
+    }
+
+    if (userError.innerText === 'wrong password') {
+        passError.style.opacity = "1";
+        passwordInput.addEventListener('change', (e) => {
+            if (e.target.value === '') {
+                passError.style.opacity = "0";
+            }
+        })
+    }
+</script>

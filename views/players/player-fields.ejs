@@ -10,21 +10,26 @@
         <div class="label"><label for="appearances">Appearances</label></div>
         <div class="label"><label for="goals">Goals</label></div>
         <div class="label"><label for="image">Image URL</label></div>
-        <div class="label"><label for="image">background</label></div>
+        <div class="label"><label for="background">background</label></div>
     </div>
     <div class="flex-inputs">
         <div class="input"><input type="text" name="firstname" id="firstname" value="<%= player.firstname %>"></div>
         <div class="input"><input type="text" name="lastname" id="lastname" value="<%= player.lastname %>"></div>
-        <div class="input"><input type="text" name="birthday" id="birthday" value="<%= player.birthday %>"></div>
-        <div class="input"><input type="text" name="number" id="number" value="<%= player.number %>"></div>
-        <div class="input"><input type="text" name="position" id="position" value="<%= player.position %>"></div>
-        <div class="input"><input type="text" name="appearances" id="appearances" value="<%= player.appearances %>"></div>
-        <div class="input"><input type="text" name="goals" id="goals" value="<%= player.goals %>"></div>
+        <div class="input"><input type="date" name="birthday" id="birthday" value="<%= player.birthday %>"></div>
+        <div class="input"><input type="number" name="number" id="number" value="<%= player.number %>"></div>
+        <select value="<%= player.position %>" class="select-position" name="position" id="position">
+            <option value="goalkeeper">Τερματοφύλακας</option>
+            <option value="defender">Αμυντικός</option>
+            <option value="midfielder">Μέσος</option>
+            <option value="forward">Επιθετικός</option>
+        </select>
+        <div class="input"><input type="number" name="appearances" id="appearances" value="<%= player.appearances %>"></div>
+        <div class="input"><input type="number" name="goals" id="goals" value="<%= player.goals %>"></div>
         <div class="input"><input type="text" name="image" id="image" value="<%= player.image %>"></div>
-        <div class="input"><input type="text" name="image" id="image" value="<%= player.background %>"></div>
+        <div class="input"><input type="text" name="background" id="background" value="<%= player.background %>" value="<%= player.background %>"></div>
     </div>
 </div>
 <div class="options">
-    <div class="cancel"><a href="/dashboard">Cancel</a></div>
+    <div class="cancel"><a href="/admin/dashboard">Cancel</a></div>
     <div><button type="submit">Save</button></div>
 </div>

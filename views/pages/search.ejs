@@ -1,9 +1,9 @@
-<main>
-    <link href="/styles/articles.css" type="text/css" rel="stylesheet" />
-    <h1>Αποτελέσματα Αναζήτησης</h1>
-        <% if (articles[0].title === "Oops,nothing Found"){ %>
-        <%= articles[0].title %>
-        <% }else{%>
-            <%- include('../articles/all-articles.ejs') %>
-        <% } %>
-</main>
+<link href="/styles/articles.css" type="text/css" rel="stylesheet" />
+<h1>Αποτελέσματα Αναζήτησης</h1>
+<div class="wrapper" style="display: flex; justify-content: center;">
+    <div class="search-container">
+        <% articles.forEach(article=>{ %>
+        <%- include('../articles/article.ejs' ,{article:article} ) %>
+        <% }) %>
+    </div>
+</div>

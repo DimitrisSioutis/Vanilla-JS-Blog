@@ -1,11 +1,25 @@
-main{
+main {
     position: relative;
-    top: 15vh;          /*equals to 15vh,but we use px so the header is not minimizing with the window height*/
+    top: 120px;
     min-height: 85vh;
-    background: -moz-linear-gradient(top, #1a2434 40%, #931d37 50%, #d14f51 85%,#d14f51 );
-    background: -webkit-linear-gradient(top, #1a2434 40%, #931d37 50%, #d14f51 85%, #d14f51 );
-    background: linear-gradient(to bottom, #1a2434 40%, #931d37 50%, #d14f51 85%,#d14f51 );
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1a2434', endColorstr='#ff6668', GradientType=0);
+    background: linear-gradient(0deg, rgba(147, 29, 55, 1) 0%, rgba(26, 36, 52, 1) 55%);
+}
+
+
+.page-title {
+    font-size: 2.7vw;
+    color: white;
+    text-align: center;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    background-image: url('https://i.ibb.co/X23sfCZ/3469854-Copy.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    -webkit-box-shadow: inset 0px -50px 25px -10px #1A2434;
+    box-shadow: inset 0px -50px 25px -10px #1A2434;
 }
 
 .mobile-menu{

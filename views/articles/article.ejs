@@ -1,5 +1,6 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<div class="article-body">
+<article class="article-body">
     <div class="article-image-container">
         <img src=" <%= article.image %> " onclick="window.location='http://localhost:8000/articles/<%= article.slug %>';" />
     </div>
@@ -8,7 +9,7 @@
         <div class="date"><%= article.createdAt.toLocaleDateString() %></div>
         <div class="article-description"><%= article.description %></div>
         <div class="read-more" id="read-more">
-            <a class="read-more" id="a" href="articles/<%= article.slug %>"><span>Περισσότερα</span><i class="fa-solid fa-arrow-right" ></i></a>
+            <a class="read-more" id="a" href="article/<%= article.slug %>"><span>Περισσότερα</span><i id="arrow" class="fa fa-arrow-right"></i></a>
         </div>
     </div>
-</div>
+</article>

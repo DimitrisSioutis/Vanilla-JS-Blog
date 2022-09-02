@@ -5,22 +5,6 @@
     src: local('Zona Pro Thin'), url('/extras/ZonaPro-Thin.woff') format('woff');
 }
 
-.page-title {
-    font-size: 2.7vw;
-    color: white;
-    text-align: center;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    background-image: url('https://i.ibb.co/X23sfCZ/3469854-Copy.jpg');
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-position: center;
-    -webkit-box-shadow: inset 0px -50px 25px -10px #1A2434;
-    box-shadow: inset 0px -50px 25px -10px #1A2434;
-}
-
 .player-containers {
     display: flex;
     flex-direction: row;

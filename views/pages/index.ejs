@@ -1,11 +1,11 @@
 <link href="/styles/index.css" type="text/css" rel="stylesheet" />
 <link href="/styles/articles.css" type="text/css" rel="stylesheet" />
 <link rel="shortcut icon" href="/extras/logo.ico">
-<main>
+
     <div class="carousel">
         <% articles.slice(0, 3).forEach(article =>{%>
             <div class="column" id = "column<%- articles.indexOf(article)%>" style="background-image: url('<%- article.image %>');"
-                onclick="window.location='http://localhost:8000/articles/<%= article.slug %>';">
+                onclick="window.location='http://localhost:8000/article/<%= article.slug %>';">
                 <p class="title"> <%- article.title %> </p>
                 <p class="description"> <%- article.description %> </p>
             </div>
@@ -20,13 +20,13 @@
         </div>
         <div class="articles-container">
             <div class="articles"> 
-                <% articles.slice(0, 4).forEach(article=>{ %>
+                <% articles.slice(3, 6).forEach(article=>{ %>
                     <%- include('../articles/article.ejs' ,{article:article} ) %>
                 <% }) %>
             </div>
         </div>
      </div>
 
-</main>
+
 
 

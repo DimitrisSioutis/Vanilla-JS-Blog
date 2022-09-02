@@ -43,6 +43,17 @@
         color: rgb(75, 75, 75);
     }
 
+    .select-position{
+        width: 49%;
+        font-size: 13px;
+        height: 41px;
+        border-radius: 5px;
+        margin-left: 4px;
+        color: rgb(75, 75, 75);
+        padding-left: 20px;
+        border: 1px solid #931d37;
+    }
+    
     .options{
         padding-top: 20px;
         display: flex;

@@ -5,21 +5,6 @@
     src: local('Zona Pro Thin'), url('/extras/ZonaPro-Thin.woff') format('woff');
 }
 
-h1{
-    font-size: 2.7vw;
-    color: white;
-    text-align: center;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    background-image: url('https://i.ibb.co/X23sfCZ/3469854-Copy.jpg');
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-position: center;
-    -webkit-box-shadow: inset 0px -50px 25px -10px #1A2434;
-    box-shadow: inset 0px -50px 25px -10px #1A2434;
-}
 .articles-container{
     display: flex;
     justify-content: center; 
@@ -133,8 +118,10 @@ h1{
     padding-left: 0.6vw;
 }
 
-.arrow{
+#arrow{
     opacity: 0;
+    color: #1A2434;
+    margin-bottom: 1px;
 }
 .read-more:hover{
     background-color: white;
@@ -145,7 +132,7 @@ h1{
     padding-left: 0;
     transition: 0.3s ease;
 }
-.read-more:hover .arrow{
+.read-more:hover #arrow{
     opacity: 1;
     transition: 0.5s ease;
     padding-left: 0.1vw;

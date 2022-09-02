@@ -1,25 +1,7 @@
 const main = require('express').Router();
-const session = require('express-session');
-const MongoStore = require('connect-mongo');
 const connection = require('../models/database');
 const Article = connection.models.Article;
-const User = connection.models.User;
 const Player = connection.models.Player;
-
-main.use(session({                                                          // http://expressjs.com/en/resources/middleware/session.html
-    secret: process.env.SECRET,
-    resave: false,                                                          // don't save session if unmodified
-    saveUninitialized: true,                                                // don't create session until something stored
-    store: MongoStore.create({mongoUrl:process.env.DATABASE_URL}),          // where to save the session   
-}))
-
-const isAuth= (req,res,next)=>{
-    if(req.session.isAuth){
-        next()
-    }else{
-        res.redirect('login')
-    }
-}
 
 main.get("/", async(req, res) => {
     const articles =  await Article.find().sort({ createdAt: 'desc' }) //method to load all articles , desc : descending order , loads the newest articles 1st
@@ -30,27 +12,24 @@ main.post("/search", async(req,res) => {
     const keyword = req.body.input
     console.log(keyword)
     const articles = await Article.find({ title: {$regex: new RegExp(keyword+'.*','i')}})
-    if (articles.length < 1){
-        articles[0] = {title:"Oops,nothing Found" }
-    }
     res.render('pages/search',{articles: articles})
+    
+})
+
+main.get("/history", async(req, res) => {   
+    res.render('pages/history')
 })
 
 main.get("/news", async(req, res) => {
     const articles =  await Article.find().sort({ createdAt: 'desc' })
     const dates = []
     articles.forEach(article =>{                    /* we create an array with the date sliced for 0,10 which gives us output like : 2022-1-1  */
-        dates.push(article.createdAt.toString().slice(0,10))   /* we slice cause we want to eliminate any duplicates and keep only the day an article was created,not exact moment */
+        /* article.createdAt.toString().slice(0,15)  output is : Sun Jul 18 2022*/
+        dates.push(article.createdAt.toString().slice(0,15))   /* we slice cause we want to keep only the day an article was created,not exact moment */
     })
 
-
-    const uniqueDates = [...new Set(dates)];  
+    const uniqueDates = [...new Set(dates)];  /* we eliminate any duplicates with the new Set function */
     res.render('articles/news', {articles: articles , uniqueDates: uniqueDates});
-});
-
-main.get("/team", async(req, res) => {
-    const players =  await Player.find()
-    res.render("players/roster",{players: players});
 });
 
 main.get("/contactus", (req, res) => {
@@ -63,39 +42,28 @@ main.post('/getArticles',async (req,res)=>{
     res.send({input: search});
 })
 
-main.get('/login', async(req, res)=>{
-    if(req.session.isAuth){
-       return res.redirect('/dashboard')
-    }
-    res.render("pages/login")
+main.get("/team", async(req, res) => {
+    const players =  await Player.find()
+    res.render("players/roster",{players: players});
 });
 
-main.post("/login", async(req,res)=>{
-    const user = {username: req.body.username, password: req.body.password}
-    existingUser = await User.findOne({username: user.username})
-
-    if(existingUser){
-        if(existingUser.password === user.password){
-            req.session.isAuth = true;
-            return res.redirect('/dashboard')
-        }
-        res.redirect('/login')
-    }
-    res.redirect('/login')
-});
-
-main.get("/dashboard",isAuth, async(req, res) => {  //we use isAuth function-middleware to see if the user is authenticated to grant them access to this admin only page
-    const articles =  await Article.find().sort({ createdAt: 'desc' })
-    const players =  await Player.find().sort({ createdAt: 'desc' })
-    res.render('pages/dashboard', {articles: articles , players: players});
-});
-
-main.delete('/logout', (req, res) => {
-    req.session.destroy((err)=>{
-        if(err) throw err
-        res.redirect('/login')
-    })  
+main.get('/article/:slug', async (req, res) => {
+    const article = await Article.findOne({    //we use findOne instead of find cause we need one particular article
+        slug: req.params.slug
+    })
+    const articles = await Article.find()
+    if (article == null) res.redirect('/news')  //if the slug doesnt exist ,user is redirected to the news page
+    res.render('articles/show-article', {article: article ,articles:articles})
 })
+
+main.get('/team/:slug', async (req, res) => {
+    const player = await Player.findOne({    
+        slug: req.params.slug
+    })
+    if (player== null) res.redirect('/roster')  
+    res.render('players/show-player', {player: player})
+})
+
 
 
 module.exports = main;

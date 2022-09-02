@@ -1,0 +1,93 @@
+.history-container {
+  width: 100%;
+  height: 300vh;
+  font-family: 'Zona Pro Bold';
+}
+
+.left-side,
+.right-side {
+  float: left;
+  width: 49.8%;
+}
+
+.line {
+  background-color: white;
+  height: 260vh;
+  width: 0.4%;
+  margin-top: 100px;
+  float: left;
+}
+
+.rhombus,
+.rhombus-bottom {
+  background-color: white;
+  width: 25px;
+  height: 30px;
+  -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.rhombus {
+  position: relative;
+  bottom: 20px;
+  right: 0.45vw;
+}
+
+.rhombus-bottom {
+  position: relative;
+  top: 256vh;
+  right: 0.45vw;
+}
+
+.paragraph,
+.num {
+  color: white;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.paragraph p {
+  color: white;
+  font-size: 25px;
+  height: 300px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.num {
+  font-size: 100px;
+  background: -webkit-linear-gradient(#ff1541, transparent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.reveal-a,
+.reveal-b,
+.reveal-c {
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 1s;
+}
+
+.active {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.load {
+  animation: load 1s ease-in
+}
+
+@keyframes load {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

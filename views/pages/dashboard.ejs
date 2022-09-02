@@ -1,17 +1,17 @@
 <link href="/styles/dashboard.css" type="text/css" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<main>
+
   <h1 class="title">
-    Πίνακας Ελέγχου , Καλώς ήλθες
-    <form action="/logout?_method=DELETE" method="POST" id="logoutform">
+    Πίνακας Ελέγχου
+    <form action="/admin/logout?_method=DELETE" method="POST" id="logoutform">
       <button type="submit" id="logout">Logout</button>
     </form>
   </h1>    
 
   <div class="options">
-    <a id="new" href="/articles/new">Νέο Άρθρο</a>
-    <a id="new" href="/players/add-player">Προσθήκη Παίχτη</a>
+    <a id="new" href="/admin/add-article">Νέο Άρθρο</a>
+    <a id="new" href="/admin/add-player">Προσθήκη Παίχτη</a>
   </div>
 
   <div class="content">
@@ -30,10 +30,10 @@
             <div class="article-markdown"><%= article.description%></div>
             <div class="article-options">
               <div class="read-more" id="read-more">
-                <a class="read-more" id="a" href="articles/<%= article.slug %>">Read More</a>
+                <a class="read-more" id="a" href="<%= article.slug %>">Read More</a>
               </div>
-              <a id="edit" href="/articles/edit/<%= article.id %>">Edit</a>
-              <form action="/articles/<%= article.id %>?_method=DELETE" method="POST">
+              <a id="edit" href="/admin/edit-article/<%= article.id %>">Edit</a>
+              <form action="/admin/delete-article/<%= article.id %>?_method=DELETE" method="POST">
                 <button type="submit" class="delete">Delete</button>
               </form>
             </div>
@@ -53,7 +53,7 @@
               <div class="lastname-background">
                 <p class="lastname-paragraph"><%=player.lastname%></p>
               </div>
-              <div class="info" id="info" href="players/<%= player.slug %>">
+              <div class="info" id="info" href="/<%= player.slug %>">
                 <div class="inline1" id="number"><%=player.number%></div>
                 <div class="inline1" id="firstname"><%=player.firstname%></div>
                 <div class="inline1" id="lastname"><%=player.lastname%></div>
@@ -78,8 +78,8 @@
               </div>
             </div>
             <div class="player-options">
-              <a id="edit" href="/players/edit/<%= player.id %>">Edit</a>
-              <form action="/players/<%= player.id %>?_method=DELETE" method="POST">
+              <a id="edit" href="/admin/edit-player/<%= player.id %>">Edit</a>
+              <form action="/admin/delete-player/<%= player.id %>?_method=DELETE" method="POST">
                 <button type="submit" class="delete">Delete</button>
               </form>
             </div>
@@ -90,4 +90,3 @@
       </div>
     </div>
 
-</main>

@@ -5,66 +5,117 @@
     src: local('Zona Pro Thin'), url('/extras/ZonaPro-Thin.woff') format('woff');
 }
 
-.login-container{
-    position: relative;
-    left:37%;
-    width: 26%;
-    height: 84.5vh;
-    top: 10vh;
+main{
+    display: flex;
+    justify-content: center;
+}
+.bg-img {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
-.login-form{
-    background-color: white;
+.bg-img img {
+    opacity: 0.5;
+    position: absolute;
+    width: 768px;
+    z-index: 0.9;
+}
+
+
+.login-form {
+    position: absolute;
+    top: 27.5%;
+    font-family: 'Zona Pro';
+    height: 350px;
+    width: 500px;
     border-radius: 5px;
-    height: 40vh;
+    background-color: rgba(250, 250, 250, 0.95);
+    -webkit-box-shadow: 0px 0px 25px 2px #04002A;
+    box-shadow: 0px 0px 25px 2px #04002A;
+
 }
 
-.login-form h1{
-    width:100%;
-    height: 25%;
+.login-form h1 {
+    width: 100%;
+    height: 100px;
     color: #1A2434;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.login-form .fields{
+.login-form .fields {
     display: flex;
     flex-direction: column;
 }
 
-.login-form .username, .password{
+.fields .username,
+.password {
     display: flex;
     justify-content: center;
     align-items: center;
     color: #1A2434;
     width: 100%;
-    height: 6vh;
-    font-size: 2vh;
+    height: 20px;
+    margin: 10px;
 }
 
-.login-form #username,#password{
-    margin-left: 1vw;
-    font-size: 2vh;
-    font-family: 'Zona Pro Thin';
-    color: #1a2434dc
+.fields label {
+    font-size: 17px;
 }
 
-.login-form .submit{
+.fields input {
+    margin-left: 10px;
+    font-size: 15px;
+    height: 30px;
+    border-radius: 5px;
+    color: #1a2434dc;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    -webkit-box-shadow: 0px 0px 20px -4px #6C6C6C;
+    box-shadow: 0px 0px 20px -10px #6C6C6C;
+}
+
+.fields input:focus {
+    -webkit-box-shadow: 0px 0px 2px 1px rgba(147, 29, 55, 1);
+    box-shadow: 0px 0px 2px 1px rgba(147, 29, 55, 1);
+}
+
+::placeholder {
+    position: relative;
+    left: 5px;
+}
+
+.fields .submit {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 5vh;
+    padding-top: 40px;
 }
 
-.login-form #login{
-    color:white;
-    font-size: 2vh;
-    height: 5vh;
+.login-form #login {
+    color: white;
+    font-size: 15px;
+    height: 30px;
+    width: 100px;
     background-color: #d14f51;
+    -webkit-box-shadow: 0px 0px 20px -4px #6C6C6C;
+    box-shadow: 0px 0px 20px -10px #6C6C6C;
 }
 
-.login-form #login:hover{
+.login-form #login:hover {
     cursor: pointer;
+}
+
+.fields span {
+    opacity: 0;
+    position: relative;
+    font-size: 10px;
+    height: 20px;
+    left: 250px;
+    bottom: 4px;
+    color: red;
 }
