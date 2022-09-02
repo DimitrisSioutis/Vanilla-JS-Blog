@@ -30,6 +30,6 @@ app.use('/',mainRouter);
 app.use('/admin',authRouter); 
 app.use(errorHandler); //we use a middleware to catch any error without cancelling our application
 
-app.listen( process.env.PORT, () => {
-    console.log(`server running on port: ${process.env.PORT}`);
+app.listen( 8000, () => {
+    console.log(`server running on port: 8000`);
 })
