@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const slugify = require('slugify');
 
 
-const connection = mongoose.createConnection(process.env.DATABASE_URL, {
+const connection = mongoose.createConnection('mongodb+srv://sioutis:dimitris123@cluster0.gn78i2u.mongodb.net/blog?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -54,19 +54,19 @@ const PlayerSchema = new mongoose.Schema({
         type: String
     },
     number: {
-        type: String
+        type: Number
     },
     birthday: {
-        type: String
+        type: Date
     },
     position: {
         type: String
     },
     appearances: {
-        type: String
+        type: Number
     },
     goals: {
-        type: String
+        type: Number
     },
     image: {
         type: String
