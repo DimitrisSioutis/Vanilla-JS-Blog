@@ -131,12 +131,15 @@
 
 @media (max-width: 767px) {
 
+    
     .carousel{
         flex-direction: column;
+        width: 100vw;
     }
 
     .column{
         width: 100vw;
+        font-size: 10px;
     }
     
 }
