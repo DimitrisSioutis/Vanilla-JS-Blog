@@ -46,6 +46,7 @@ a {
 #logout{
     clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
     position: fixed;
+    background-color: rgba(147,29,55,1);
     right: 0;
     top: 140px;
     width: 150px;
