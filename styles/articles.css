@@ -62,7 +62,7 @@
 }
 
 .article-title {
-    font-size: 1.2vw;
+    font-size: 16px;
     color: black;
     height: 20%;
 }
@@ -70,7 +70,7 @@
 .date {
     font-family: 'Zona Pro Thin';
     color: rgb(120, 120, 120);
-    font-size: 0.5vw;
+    font-size: 10px;
     font-weight: bold;
     height: 10%;
 }
@@ -78,7 +78,7 @@
 .article-description{
     font-family: 'Zona Pro Thin';
     color: #1A2434;
-    font-size: 0.7vw;
+    font-size: 12px;
     font-weight: bolder;
     height: 55%;
 }
@@ -172,4 +172,18 @@
 .weekday{
     font-size: 40px;
     color: rgba(0, 0, 0, 0.85)
+}
+
+@media (max-width: 1200px) {
+    .article-body {
+        width: 100vw;
+        
+    }
+
+    .article-container {
+        margin: 10px;
+        width: 300px;
+        animation: load 1.3s;
+    }
+
 }
