@@ -8,7 +8,7 @@
         <h3>Τερματοφύλακες</h3>
         <div class="players">
             <% players.forEach(player => { %>
-            <%if(player.position === 'Goalkeeper'){ %>
+            <%if(player.position === 'goalkeeper'){ %>
             <%- include('player-card.ejs',{player:player}) %>
             <!-- passing the player object to the play-card -->
             <% } %>
@@ -20,7 +20,7 @@
         <h3>Αμυντικοί</h3>
         <div class="players">
             <% players.forEach(player => { %>
-            <%if(player.position === 'Defender'){ %>
+            <%if(player.position === 'defender'){ %>
             <%- include('player-card.ejs',{player:player}) %>
             <% } %>
             <% }) %>
@@ -31,7 +31,7 @@
         <h3>Μέσοι</h3>
         <div class="players">
             <% players.forEach(player => { %>
-            <%if(player.position === 'Midfielder'){ %>
+            <%if(player.position === 'midfielder'){ %>
             <%- include('player-card.ejs',{player:player}) %>
             <!-- passing the player object to the play-card -->
             <% } %>
@@ -43,7 +43,7 @@
         <h3>Επιθετικοί</h3>
         <div class="players">
             <% players.forEach(player => { %>
-            <%if(player.position === 'Forward'){ %>
+            <%if(player.position === 'forward'){ %>
             <%- include('player-card.ejs',{player:player}) %>
             <!-- passing the player object to the play-card -->
             <% } %>

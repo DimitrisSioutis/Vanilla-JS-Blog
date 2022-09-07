@@ -26,12 +26,11 @@ a {
 }
 
 .options {
-    width: 72%;
+    width: 100%;
     display: flex;
-    justify-content: space-around;
+    height: 100px;
     align-items: center;
-    height: 10vh;
-    margin-left: 10%;
+    justify-content: space-evenly;
 }
 
 .options #new {
@@ -39,20 +38,24 @@ a {
    background-color: white;
    height: 4vh;
    width: 8vw;
-   padding-top: 1vh;
    text-align: center;
+   padding-top: 10px;
 }
 
-#logoutform{
-    padding-left: 3vw;
-    padding-bottom: 4vh;
-}
+
 #logout{
-    background-color: rgb(255, 60, 60);
-    width: 8vw;
-    height: 4.2vh;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+    position: fixed;
+    right: 0;
+    top: 140px;
+    width: 150px;
+    height: 40px;
 }
 
+#logout span{
+    padding-left: 20px;
+    padding-right: 10px;
+}
 .content{
     display: flex;
     justify-content: space-around;
@@ -67,17 +70,26 @@ a {
 
 .articles {
     background-color: white;
-    width: 45vw;
+    width: 48vw;
 }
 
-
-#article-body {
+.article-body {
     display: flex;
-    padding: 10px 10px 0px 10px;
+    width: 45vw;
+    background-color: white;
+    margin: 20px 20px 0px 20px;
+    -webkit-box-shadow: 0px 0px 5px 2px #221c352c; 
+    box-shadow: 0px 0px 5px 2px #221c352c;
+}
 
+.article-body:hover {
+    -webkit-box-shadow: 0px 0px 5px 2px #221c355e; 
+    box-shadow: 0px 0px 5px 2px #221c355e;
+    transition: 0.5s ease;
 }
 
 .article-image-container {
+    
     width: 400px;
     height: 300px;
     overflow: hidden;
@@ -98,13 +110,14 @@ a {
 }
 
 .article-container {
-    margin-left: 10px;
+    margin: 15px;
     width: 400px;
+    animation: load 1.3s;
 }
 
 .article-title {
     font-size: 1.2vw;
-    color: #931d37;
+    color: black;
     height: 20%;
 }
 
@@ -118,45 +131,53 @@ a {
 
 .article-description{
     font-family: 'Zona Pro Thin';
-    color: #931d37;
-    font-size: 0.9vw;
+    color: #1A2434;
+    font-size: 0.7vw;
     font-weight: bolder;
     height: 55%;
 }
 
-.article-options{
-    margin-top: 27%;
-    display: flex;
-}
 
-.read-more, #edit, .delete{
+.read-more {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 6vw;
-    height: 4.5vh;
-    margin: 0.2vw;
-}
-.read-more {
-    background-color: #931d37;
-}
-
-.read-more a {
+    width: 132px;
+    height: 45px;
     color: white;
     text-decoration: none;
 }
 
-#edit{
-    background-color: #A2A3A4;
-    color:white;
+.read-more {
+    background-color: #1A2434;
 }
-.delete {
-    background-color: rgb(255, 60, 60);
-    color:white;
+
+.read-more span{
+    padding-left: 0.6vw;
+}
+
+#arrow{
+    opacity: 0;
+    color: #1A2434;
+    margin-bottom: 1px;
+}
+.read-more:hover{
+    background-color: white;
+    color: #1A2434;
+    transition: 0.2s ease;
+}
+.read-more:hover span{
+    padding-left: 0;
+    transition: 0.3s ease;
+}
+.read-more:hover #arrow{
+    opacity: 1;
+    transition: 0.5s ease;
+    padding-left: 0.1vw;
 }
 
 .players-outside-container{
-    width: 45vw;
+    width: 48vw;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -246,15 +267,10 @@ h3{
     text-align: center;
     opacity: 0.8;
     background: -webkit-linear-gradient(rgb(255, 255, 255), rgba(255, 255, 255, 0));
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     
-}
-
-.player-options{
-    display: flex;
-    justify-content: center;
-    padding: 2vh 7.5vw 2vh  0;
 }
 
 /* Mouse over and mouse out events */
@@ -276,4 +292,37 @@ h3{
     opacity: 1;
     display: block;
     transition: 0.4s ease;
+}
+
+.edit-options{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+
+}
+
+.edit-options a{
+    width: 120px;
+    height: 40px;
+}
+
+#edit{
+    background-color: #1A2434;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+.delete{    
+    position: relative;
+
+    width: 120px;
+    height: 40px;
+    background-color: rgba(147, 29, 55, 1) ;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

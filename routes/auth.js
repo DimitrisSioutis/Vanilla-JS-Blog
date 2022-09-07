@@ -116,6 +116,7 @@ auth.delete('/delete-player/:id', async (req, res) => {
     res.redirect('/admin/dashboard')  //once you delete,returns to news
 })
 
+
 function savePlayerAndRedirect(path) {
     return async (req, res) => {
         let player = req.player        //instead of creating a new player ,we are using the player of the request in case we want to edit instead of creating a new auth 
@@ -127,10 +128,11 @@ function savePlayerAndRedirect(path) {
         player.appearances = req.body.appearances
         player.goals = req.body.goals
         player.position = req.body.position
+        player.background = req.body.background
         try {
             player= await player.save()
             console.log(player)
-            res.redirect(`/`)  //once auth is saved the user gets redirected to the new auth
+            res.redirect(`/`)  
         } catch (e) {
             console.log(e)
             res.render(`players/${path}`, {
@@ -157,5 +159,7 @@ function saveArticleAndRedirect(path) {
         }
     }
 }
+
+
 
 module.exports = auth;

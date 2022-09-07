@@ -1,43 +1,42 @@
 <link href="../styles/show-player.css" type="text/css" rel="stylesheet">
-<main>
-  <div class="show-player-container">
-    <div class="background">
-      <div class="image">
-        <img src= '<%- player.background %>' alt="diana"/>
+
+<div class="show-player-container">
+  <div class="background">
+    <div class="image">
+      <img src='<%- player.background %>' alt="diana" />
+    </div>
+    <div>
+      <span class="firstname">
+        <%= player.firstname %>
+      </span>
+      <span class="lastname">
+        <%= player.lastname %>
+      </span>
+    </div>
+  </div>
+  <div class="bottom-container">
+    <div class="flex-container">
+      <div class="number-image">
+        <span><%= player.number %></span>
+        <img src='<%- player.image%>' />
       </div>
-      <div>
-        <span class="firstname">
-          <%= player.firstname %>
-        </span>
-        <span class="lastname">
-          <%= player.lastname %>
-        </span>
-      </div>
-    </div>      
-    <div class="bottom-container">
-      <div class="flex-container">
-        <div class="number-image">
-          <span><%= player.number %></span>
-          <img src='<%- player.image%>' />
-        </div>
-        <div class="player-info">
-          <p class='no-name'><%= player.number%>  <%=player.firstname%> <%=player.lastname %></p>
-          <div class="labels-values">
-            <div class="labels">
-              <p>Position :</p>
-              <p>Birthday :</p>
-              <p>Appearances :</p>
-              <p>Goals :</p>
-            </div>
-            <div class="values">
-              <p><%= player.position %> </p>
-              <p><%= player.birthday %> </p>
-              <p><%= player.appearances %> </p>
-              <p><%= player.goals %> </p>
-            </div>
+      <div class="player-info">
+        <p class='no-name'><%= player.number%> <%=player.firstname%> <%=player.lastname %></p>
+        <div class="labels-values">
+          <div class="labels">
+            <p>Position :</p>
+            <p>Birthday :</p>
+            <p>Appearances :</p>
+            <p>Goals :</p>
+          </div>
+          <div class="values">
+            <p><%= player.position %> </p>
+            <p><%= player.birthday.toLocaleDateString() %> </p>
+            <p><%= player.appearances %> </p>
+            <p><%= player.goals %> </p>
           </div>
         </div>
       </div>
     </div>
   </div>
-</main>
+</div>
