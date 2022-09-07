@@ -286,3 +286,10 @@ textarea {
         opacity: 1;
     }
 }
+
+@media (max-width: 1200px) {
+    .nav-bar::after{
+        display: none;
+    }
+
+}

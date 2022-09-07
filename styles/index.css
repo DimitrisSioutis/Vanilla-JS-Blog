@@ -165,10 +165,6 @@
         opacity: 1;
     }
 
-    .nav-bar::after{
-        display: none;
-    }
-
     .container{
         width: 100vw;
         margin-left: 0;
