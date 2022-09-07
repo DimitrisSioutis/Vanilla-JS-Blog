@@ -126,13 +126,17 @@
 }
 
 .articles-container{
-    margin-top: 2vh;
+    padding-top: 20px;
 }
 
 @media (max-width: 767px) {
 
     .carousel{
         flex-direction: column;
+    }
+
+    .column{
+        width: 100%;
     }
     
 }
