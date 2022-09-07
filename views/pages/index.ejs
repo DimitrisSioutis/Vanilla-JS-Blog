@@ -5,7 +5,7 @@
     <div class="carousel">
         <% articles.slice(0, 3).forEach(article =>{%>
             <div class="column" id = "column<%- articles.indexOf(article)%>" style="background-image: url('<%- article.image %>');"
-                onclick="window.location='http://localhost:8000/article/<%= article.slug %>';">
+                onclick="window.location='/article/<%= article.slug %>';">
                 <p class="title"> <%- article.title %> </p>
                 <p class="description"> <%- article.description %> </p>
             </div>
