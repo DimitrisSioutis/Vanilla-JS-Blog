@@ -10,7 +10,7 @@ auth.use(session({                                                          // h
     secret: process.env.SECRET,
     resave: false,                                                          // don't save session if unmodified
     saveUninitialized: true,                                                // don't create session until something stored
-    store: MongoStore.create({mongoUrl:process.env.DATABASE_URL}),          // where to save the session   
+    store: MongoStore.create({mongoUrl:'mongodb+srv://sioutis:dimitris123@cluster0.gn78i2u.mongodb.net/blog?retryWrites=true&w=majority'}),          // where to save the session   
 }))
 
 const isAuth= (req,res,next)=>{
