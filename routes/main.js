@@ -44,7 +44,7 @@ main.post('/getArticles',async (req,res)=>{
 
 main.get("/team", async(req, res) => {
     const players =  await Player.find()
-    res.render("players/roster",{players: players});
+    res.render("players/team",{players: players});
 });
 
 main.get('/article/:slug', async (req, res) => {
