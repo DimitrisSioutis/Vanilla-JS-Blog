@@ -1,6 +1,7 @@
 <link href="/styles/player-fields.css" type="text/css" rel="stylesheet" />
 
 <div class="player-container">
+
     <div class="flex-labels">
         <div class="label"><label for="firstname">Firstname</label></div>
         <div class="label"><label for="lastname">Lastname</label></div>
@@ -15,9 +16,9 @@
     <div class="flex-inputs">
         <div class="input"><input type="text" name="firstname" id="firstname" value="<%= player.firstname %>"></div>
         <div class="input"><input type="text" name="lastname" id="lastname" value="<%= player.lastname %>"></div>
-        <div class="input"><input type="date" name="birthday" id="birthday" value="<%= player.birthday %>"></div>
+        <div class="input"><input type="date" name="birthday" id="birthday" value="<%= [player.birthday.getFullYear(), player.birthday.getMonth().toString().padStart(2, '0'), player.birthday.getDay().toString().padStart(2, '0')].join('-') %>"></div>
         <div class="input"><input type="number" name="number" id="number" value="<%= player.number %>"></div>
-        <select value="<%= player.position %>" class="select-position" name="position" id="position">
+        <select class="select-position" name="position" id="position">
             <option value="goalkeeper">Τερματοφύλακας</option>
             <option value="defender">Αμυντικός</option>
             <option value="midfielder">Μέσος</option>
@@ -33,3 +34,4 @@
     <div class="cancel"><a href="/admin/dashboard">Cancel</a></div>
     <div><button type="submit">Save</button></div>
 </div>
+
