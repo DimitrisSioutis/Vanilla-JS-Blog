@@ -1,6 +1,7 @@
 main {
     position: relative;
     top: 120px;
+    padding-bottom: 50px;
     min-height: calc(100vh-140px-20px);
     background: linear-gradient(0deg, rgba(147, 29, 55, 1) 0%, rgba(26, 36, 52, 1) 55%);
 }
