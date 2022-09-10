@@ -132,7 +132,7 @@ function savePlayerAndRedirect(path) {
         try {
             player= await player.save()
             console.log(player)
-            res.redirect(`/`)  
+            res.redirect('/admin/dashboard')  
         } catch (e) {
             console.log(e)
             res.render(`players/${path}`, {
@@ -153,7 +153,7 @@ function saveArticleAndRedirect(path) {
             article = await article.save()
             res.redirect(`/admin/dashboard`)  //once article is saved the user gets redirected to the new article
         } catch (e) {
-            res.render(`admin/${path}`, {
+            res.render(`articles/${path}`, {
                 article: article                       
             } )
         }
