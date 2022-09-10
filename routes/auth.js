@@ -7,7 +7,7 @@ const User = connection.models.User;
 const Player = connection.models.Player;
 
 auth.use(session({                                                          // http://expressjs.com/en/resources/middleware/session.html
-    secret: process.env.SECRET,
+    secret: 'secret',
     resave: false,                                                          // don't save session if unmodified
     saveUninitialized: true,                                                // don't create session until something stored
     store: MongoStore.create({mongoUrl:'mongodb+srv://sioutis:dimitris123@cluster0.gn78i2u.mongodb.net/blog?retryWrites=true&w=majority'}),          // where to save the session   
