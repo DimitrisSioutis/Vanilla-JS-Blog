@@ -5,9 +5,10 @@
     src: local('Zona Pro Thin'), url('/extras/ZonaPro-Thin.woff') format('woff');
 }
 
-main{
+.login-container{
     display: flex;
     justify-content: center;
+    height: 80vh;
 }
 .bg-img {
     display: flex;

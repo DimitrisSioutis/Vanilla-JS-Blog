@@ -1,25 +1,28 @@
 <link href="/styles/login.css" type="text/css" rel="stylesheet" />
 
-<div class='bg-img'><img src='https://i.ibb.co/rwf4qGv/logo.png' /></div>
-<form action="/admin/login" class="login-form" id="login-form" method="POST">
-    <h1>Login</h1>
+<div class="login-container">
+    <div class='bg-img'><img src='https://i.ibb.co/rwf4qGv/logo.png' /></div>
+    <form action="/admin/login" class="login-form" id="login-form" method="POST">
+        <h1>Login</h1>
 
-    <div class="fields">
-        <div class="username">
-            <label for="username">Username :</label>
-            <input type="text" id="username" name="username" placeholder="Username">
+        <div class="fields">
+            <div class="username">
+                <label for="username">Username :</label>
+                <input type="text" id="username" name="username" placeholder="Username">
+            </div>
+            <span id="user-error"> <%= message %></span>
+            <div class="password">
+                <label for="password">Password :</label>
+                <input type="password" id="password" name="password" placeholder="Password">
+            </div>
+            <span id="pass-error"> <%= message %></span>
+            <div class="submit">
+                <input type="submit" id="login" value="Είσοδος">
+            </div>
         </div>
-        <span id="user-error"> <%= message %></span>
-        <div class="password">
-            <label for="password">Password :</label>
-            <input type="password" id="password" name="password" placeholder="Password">
-        </div>
-        <span id="pass-error"> <%= message %></span>
-        <div class="submit">
-            <input type="submit" id="login" value="Είσοδος">
-        </div>
-    </div>
-</form>
+    </form>
+</div>
+
 
 
 <script>
