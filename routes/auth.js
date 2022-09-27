@@ -93,7 +93,9 @@ auth.delete('/delete-article/:id', async (req, res) => {
 })
 
 auth.get('/add-player',isAuth, (req, res) => {
-    res.render('players/add-player', {player: new Player()})
+    const player = new Player()
+    player.birthday = '1-1-1970'
+    res.render('players/add-player', {player: player})
 })
 
 auth.get('/edit-player/:id',isAuth, async (req, res) => {
